@@ -27,3 +27,11 @@ jobs:
         run: python tools/verify.py evidence/final/demo --self-test --manifest SHA256SUMS
       - name: Reproduce tests and five cycles
         run: python tools/reproduce.py ci-evidence --target-dir target
+      - name: Show captured reproduction diagnostics
+        if: always()
+        shell: python
+        run: |
+          from pathlib import Path
+          for path in sorted(Path("ci-evidence").glob("*.log")):
+              print("DIAGNOSTIC FILE:", path.as_posix(), flush=True)
+              print(path.read_text(encoding="utf-8", errors="replace"), flush=True)
