@@ -1,4 +1,4 @@
-use crate::authority::{Report, VerifiedClosure};
+use crate::authority::{MemoryReference, Report, VerifiedClosure};
 use crate::{hash_parts, hash_value};
 use serde::{Deserialize, Serialize};
 use std::collections::BTreeMap;
@@ -48,6 +48,68 @@ pub(crate) struct Store {
     pub(crate) records: Vec<Record>,
     head: String,
     effects: BTreeMap<(String, String), Effect>,
+}
+
+pub(crate) fn memory_references(
+    records: &[Record],
+    head: &str,
+    context: &str,
+) -> Vec<MemoryReference> {
+    records
+        .iter()
+        .enumerate()
+        .filter(|(_, r)| r.report.input.context_sha256() == context)
+        .map(|(index, r)| MemoryReference {
+            cycle: r.sequence,
+            context_sha256: r.report.input.context_sha256(),
+            receipt_sha256: records
+                .get(index + 1)
+                .map(|next| next.previous_receipt_sha256.clone())
+                .unwrap_or_else(|| head.into()),
+            negative_candidate_sha256: r
+                .report
+                .assessments
+                .iter()
+                .filter(|a| a.status == "EliminatedCounterproof")
+                .map(|a| a.candidate_sha256.clone())
+                .collect(),
+            positive_candidate_sha256: if r.report.verification == 1 {
+                r.report.selected_candidate_sha256.iter().cloned().collect()
+            } else {
+                vec![]
+            },
+            question_count: r.report.questions.len(),
+        })
+        .rev()
+        .take(8)
+        .collect::<Vec<_>>()
+        .into_iter()
+        .rev()
+        .collect()
+}
+
+// Called only after effect_for has validated the report and incident shape.
+fn validate_memory_references(
+    report: &Report,
+    records: &[Record],
+    head: &str,
+) -> Result<(), String> {
+    if report.status == "FailClosedIntegrity" {
+        // An incident retains the rejected trace, not a trusted LIGHT coordination.
+        return Ok(());
+    }
+    let refs = report
+        .lgc
+        .steps
+        .get(2)
+        .and_then(|step| step.payload.get("memory_refs"))
+        .ok_or("recorded memory references absent")?;
+    let actual: Vec<MemoryReference> =
+        serde_json::from_value(refs.clone()).map_err(|_| "invalid recorded memory references")?;
+    if actual != memory_references(records, head, &report.input.context_sha256()) {
+        return Err("memory references disagree with prior same-context records".into());
+    }
+    Ok(())
 }
 
 fn io(e: std::io::Error) -> String {
@@ -112,6 +174,7 @@ impl Store {
             return Err("stale cycle or predecessor".into());
         }
         let prospective = effect_for(&report)?;
+        validate_memory_references(&report, &self.records, &self.head)?;
         let new_effect = match prospective {
             Some(e) => match self
                 .effects
@@ -441,6 +504,7 @@ fn decode(bytes: &[u8]) -> Result<Decoded, String> {
             return Err("record identity/sequence mismatch".into());
         }
         let proposed = effect_for(&r.report)?;
+        validate_memory_references(&r.report, &records, &head)?;
         let expected = if let Some(e) = proposed {
             match effects.get(&(e.context_sha256.clone(), e.action_id.clone())) {
                 Some(prior) if prior.values == e.values => None,
@@ -477,6 +541,9 @@ pub fn inspect(path: &Path) -> Result<serde_json::Value, String> {
         serde_json::json!({"records":records,"head_sha256":head,"effect_count":effects.len(),"interpretation":"storage integrity replay; not a new SHADOW decision"}),
     )
 }
+
+#[cfg(test)]
+mod memory_reference_tests;
 
 #[cfg(test)]
 mod tests {

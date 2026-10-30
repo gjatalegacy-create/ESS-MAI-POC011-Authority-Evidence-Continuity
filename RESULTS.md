@@ -1,5 +1,7 @@
 # POC011 — executed results
 
+Current-branch maintenance results are recorded in [MEMORY_INTEGRITY_FIX.md](MEMORY_INTEGRITY_FIX.md). The original execution results below and `evidence/final` remain the frozen `v0.1.0` evidence. The original 38 tests did not cover the rehashed historical-reference inconsistencies found in the subsequent audit.
+
 Final validation completed 2026-10-30 on Windows 10 AMD64, Cargo 1.98.0. The authoritative run is **`evidence/final/`**. This is a local reproducibility result for the bounded capsule, not independent peer review or certification of ESS-MAI, AIGovern-Cyber or VERITAS.
 
 ## Results

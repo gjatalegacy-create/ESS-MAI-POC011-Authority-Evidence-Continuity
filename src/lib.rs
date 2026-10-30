@@ -69,41 +69,11 @@ impl Engine {
             return Err("cycle must equal next durable sequence".into());
         }
         self.in_flight = true;
-        let memory_refs = self
-            .store
-            .records
-            .iter()
-            .enumerate()
-            .filter(|(_, r)| r.report.input.context_sha256() == input.context_sha256())
-            .map(|(index, r)| authority::MemoryReference {
-                cycle: r.sequence,
-                context_sha256: r.report.input.context_sha256(),
-                receipt_sha256: self
-                    .store
-                    .records
-                    .get(index + 1)
-                    .map(|next| next.previous_receipt_sha256.clone())
-                    .unwrap_or_else(|| self.store.head().into()),
-                negative_candidate_sha256: r
-                    .report
-                    .assessments
-                    .iter()
-                    .filter(|a| a.status == "EliminatedCounterproof")
-                    .map(|a| a.candidate_sha256.clone())
-                    .collect(),
-                positive_candidate_sha256: if r.report.verification == 1 {
-                    r.report.selected_candidate_sha256.iter().cloned().collect()
-                } else {
-                    vec![]
-                },
-                question_count: r.report.questions.len(),
-            })
-            .rev()
-            .take(8)
-            .collect::<Vec<_>>()
-            .into_iter()
-            .rev()
-            .collect();
+        let memory_refs = storage::memory_references(
+            &self.store.records,
+            self.store.head(),
+            &input.context_sha256(),
+        );
         let closure =
             authority::run_with_memory(input, self.store.head(), &mut self.ffi, memory_refs)?;
         let (report, commit) = self.store.commit(closure)?;

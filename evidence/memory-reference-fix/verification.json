@@ -1,0 +1,103 @@
+{
+  "schema": "POC011/memory-reference-correction/1",
+  "date": "2026-10-30",
+  "base_git_commit": "cc8b3374842aa3903ffb076e4ef5cd36776424dd",
+  "toolchain": "cargo 1.98.0 (797e8a9bc 2026-08-05)",
+  "execution_environment": "Windows, x86_64-pc-windows-gnu, GCC linker",
+  "original_five_regressions_before_fix": {
+    "passed": 2,
+    "failed": 5,
+    "exit_code": 101
+  },
+  "rust_tests": {
+    "debug": {
+      "passed": 46,
+      "failed": 0,
+      "ignored": 0
+    },
+    "release": {
+      "passed": 46,
+      "failed": 0,
+      "ignored": 0
+    }
+  },
+  "python_self_tests": 17,
+  "five_cycles": {
+    "cycles": 5,
+    "verification_bits": [
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    "unique_effects": 2,
+    "head_sha256": "c629ec05c66fc67a4d869217200092a8b6886afeb4ef2c31c875c58f9fc2be69"
+  },
+  "adversarial_wal_readback": [
+    {
+      "case": "original",
+      "expected_accept": true,
+      "exit_code": 0,
+      "input_sha256": "495b50e28fb56d402169bbed91b14e77e624762cdd06d5f764aacb329659f73c",
+      "input_unchanged": true,
+      "error": null
+    },
+    {
+      "case": "wrong_receipt",
+      "expected_accept": false,
+      "exit_code": 1,
+      "input_sha256": "6d9b6ae02fb5a20504edb54fb0d8be599d2697446c5b95c330cc10cb62515e3d",
+      "input_unchanged": true,
+      "error": "memory references disagree with prior same-context records"
+    },
+    {
+      "case": "dropped_refs",
+      "expected_accept": false,
+      "exit_code": 1,
+      "input_sha256": "1899c2cc2d62516c397a75ad9affe26b2aeb59a8e9ba73a054bda7576331d072",
+      "input_unchanged": true,
+      "error": "memory references disagree with prior same-context records"
+    },
+    {
+      "case": "invented_negative",
+      "expected_accept": false,
+      "exit_code": 1,
+      "input_sha256": "9450ec948babb3022ad1a62fd16af97f5c2ece3f41090a85c48e0a4b51e05205",
+      "input_unchanged": true,
+      "error": "memory references disagree with prior same-context records"
+    },
+    {
+      "case": "wrong_question_count",
+      "expected_accept": false,
+      "exit_code": 1,
+      "input_sha256": "cc7c1e384e5d2ff7e5921a181877d605ce5db3cfcf7593c4dade3a5e3651d1bd",
+      "input_unchanged": true,
+      "error": "memory references disagree with prior same-context records"
+    },
+    {
+      "case": "corrupt_hash_control",
+      "expected_accept": false,
+      "exit_code": 1,
+      "input_sha256": "4c65848980de6f457fb3b84d78d931dbbe0781b4ce2f8cf474cf49321f7825e8",
+      "input_unchanged": true,
+      "error": "WAL SHA-256 mismatch"
+    }
+  ],
+  "inconsistent_history_cannot_continue": {
+    "exit_code": 1,
+    "wal_unchanged": true,
+    "error": "memory references disagree with prior same-context records"
+  },
+  "source_sha256": {
+    "src/lib.rs": "cb1b650faac86deba621f98bb168e96e4c6e028b88f229d0a3747371d1e9b37e",
+    "src/storage.rs": "afa80f55e62f9ca0309472947f1a2d8ddd6ec0bfac19b38acab2956deb93f6cb",
+    "src/storage/memory_reference_tests.rs": "ab5913319fac08513845768e7faa9c17611481faec7d810b2186c0692958ed36"
+  },
+  "release_binary_sha256": "d009c5651cc907022c5bce5261a65689390a0ec8e282b34e5f7153095c2b60e9",
+  "limits": [
+    "Tests address internal historical-reference consistency, not issuer authenticity or complete-history rollback.",
+    "Original v0.1.0 archives and tags are unchanged.",
+    "Rust 1.99.1 compatibility is not claimed."
+  ]
+}

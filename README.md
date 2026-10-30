@@ -28,6 +28,8 @@ Author and architecture: **Bledar Gjata / Gjata Legacy**. ESS-MAI public source:
 
 ## What runs
 
+The current branch includes a [memory-reference integrity correction](MEMORY_INTEGRITY_FIX.md): Rust now checks historical references against the actual prior records before commit and on reopen. The original `v0.1.0` archive remains unchanged and contains the earlier gap. This correction preserves current-case SHADOW verification and the five-cycle fixture; it does not add history authentication or remove the documented rollback limitation.
+
 The declared domain is `x = 0,1,2,3,4`. A candidate supplies `a`, `b` and evidence samples for `y = a*x + b`. QUANTUM computes every model value and checks the supplied samples. Complete, matching samples and compliance with the hard risk limit are necessary for eligibility. Missing samples and observed contradictions remain distinct.
 
 Among eligible candidates, selection orders gain descending, risk ascending and candidate SHA-256 ascending. Here, gain is the sum of the five values and risk is their maximum absolute value. These are deliberately small model quantities, not probabilities or physical safety measurements. A larger gain cannot buy an exception to a hard constraint.
