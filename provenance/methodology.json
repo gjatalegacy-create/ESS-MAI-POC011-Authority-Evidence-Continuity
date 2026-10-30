@@ -1,0 +1,666 @@
+{
+  "schema": "ESS-MAI/POC011/methodology/1",
+  "recorded_on": "2026-10-29",
+  "status": "SOURCE_AUDIT_AND_PLANNED_ADAPTATION; not a runtime test or completion attestation",
+  "historical_plan_notice": "The recorded_on date, status, planned_phase_order, planned_five_cycles and validation fields preserve the 2026-10-29 planning snapshot. Its missing-evidence classification and reset/output ordering are superseded by final_materialization below. Executed evidence is recorded in RESULTS.md and evidence/final, not inferred from this historical plan.",
+  "source_roots": {
+    "C": {
+      "label": "Canonical ESS-MAI v1.8.9 phase 015",
+      "local_tree": "v1.8.9_ess_mai_phase_015-ws/v1.8.9_ess_mai_phase_015/ess_mai"
+    },
+    "A": {
+      "label": "Current AIGovern-Cyber derivative inspected read-only",
+      "local_tree": "Desktop/aig-c/codex_zvn/runtime",
+      "disclosure": "Source hashes and locations only, except the explicitly selected small 0-NOI primitive copied byte-for-byte into src/zero_noi.rs and identified in provenance/ffi_zero_noi.json. No other private full-file copies or full private runtime are included."
+    }
+  },
+  "provenance_boundary": {
+    "classification": "new bounded adaptation with explicit source-method map",
+    "not_a_byte_for_byte_extraction": true,
+    "canonical_dbab_zero_noi_search": "No dbab/d-bab/zero_noi/0-noi matches found in canonical Rust/Cargo sources during the bounded audit; later materialization headers explicitly declare POC-native origin.",
+    "gcl_restart": "A fresh capsule cycle after a scoped interruption is a new adaptation. Canonical CollapsePhase has Coordination, Reasoning and Verification; it is not the capsule HOLD/FAIL_CLOSED/RESTART state machine.",
+    "fullfile_sha_scope": "Recorded hashes fingerprint the whole inspected files, not only the cited blocks. Matching hashes do not prove issuer authority, scientific truth, authenticity or runtime activation."
+  },
+  "role_contract": {
+    "LIGHT": "Anchor one case and coordinate candidates. No action verdict.",
+    "QUANTUM": "Compute, eliminate and propose in the declared bounded model. No final authorization.",
+    "SHADOW": "Independently check current-case evidence and required gates, then provide the capsule action-verification bit.",
+    "D_BAB": "Witness actual preconditions and failures only; no veto, authorization or synthetic evidence.",
+    "zero_NOI": "Borrowed informational pulse; the caller owns execution and checks.",
+    "PD_LGC": "Retain exact context, ordered evidence and questions across cycles; hashes are integrity links, not authority tokens."
+  },
+  "planned_phase_order": [
+    "LIGHT case/context anchoring",
+    "D-BAB precondition witness",
+    "local law and competence/evidence boundary",
+    "QUANTUM candidate computation, elimination and proposal",
+    "SHADOW mandatory multi-verification (Spine analogue)",
+    "Matrix current-case presentation",
+    "final required-gate/action verification",
+    "owner-controlled record commit",
+    "output plus scoped iZ question",
+    "ephemeral reset after final cycle action"
+  ],
+  "final_materialization": {
+    "recorded_on": "2026-10-30",
+    "status": "Bounded capsule implementation with local execution evidence; not certification of the full architecture or an external integration.",
+    "evidence": ["RESULTS.md", "evidence/final/result.json", "evidence/final/demo"],
+    "phase_order": [
+      "D-BAB precondition witness and borrowed 0-NOI pulse before LIGHT coordination",
+      "LIGHT case/context anchoring and coordination of current candidates with bounded historical references",
+      "D-BAB precondition witness and borrowed 0-NOI pulse before QUANTUM computation",
+      "QUANTUM current-candidate assessment, elimination and proposal, with bounded RAM write/readback when eligible",
+      "D-BAB outcome witness for QUANTUM, then precondition witness and borrowed 0-NOI pulse before SHADOW verification",
+      "SHADOW current-case mandatory multi-verification (Spine analogue), then Matrix presentation and final required-gate/action verification",
+      "D-BAB outcome witness for SHADOW",
+      "Owner-controlled journal commit, flush, synchronization and identical readback before publishing the new memory state",
+      "Release transient in-flight state after durable closure, retaining committed continuity evidence and the live FFI registry",
+      "Return current output and scoped iZ questions for CLI delivery; a later delivery failure does not undo the commit"
+    ],
+    "five_cycle_statuses": ["HoldIncompleteLaw", "HoldMissingEvidence", "FailClosedCounterproof", "VerifiedAction", "VerifiedAction"],
+    "five_cycle_scalar_bits": [0, 0, 0, 1, 1],
+    "missing_evidence": "Cycle 2 is HoldMissingEvidence: admission remains blocked and the exact gap is retained for iZ. It is not a scientific counterproof and supersedes the historical plan's authority-failure classification.",
+    "competence_boundary": "Coordination, proposal and verification are distinct competences. SHADOW's recomputation is verification, not a second exercise of QUANTUM's proposal competence. One-use handle consumption protects one action's admission and does not define or transfer an AI Authority's competence."
+  },
+  "action_model": {
+    "classification": "NEW bounded integer affine-model utility; not inherited physics or general scientific validation",
+    "domain_x": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "formula": "y(x) = a*x + b",
+    "arithmetic": "bounded integer arithmetic; overflow must not silently wrap",
+    "risk": "max(abs(y(x))) over the declared domain",
+    "gain": "sum(y(x)) over the declared domain",
+    "admission": "risk <= declared hard risk limit, together with all required law, competence, scope and evidence checks",
+    "deterministic_order": [
+      "gain descending",
+      "risk ascending",
+      "canonical candidate SHA256 ascending"
+    ],
+    "utility_scope": "High risk/high gain is only a comparison inside this declared utility. A hard-risk violation is never compensated by gain.",
+    "verification_output": "one scalar 0 or 1 for the bounded action only",
+    "excluded_claims": [
+      "native paired (0,0)/(1,1) verdict",
+      "confidence or probability score",
+      "physical hardware safety measurement",
+      "complete ESS-MAI or AIGovern-Cyber implementation",
+      "general proof of scientific truth"
+    ]
+  },
+  "planned_five_cycles": [
+    {
+      "cycle": 1,
+      "fixture": "incomplete law",
+      "required_observation": "HOLD with exact missing legal condition; no authorized action"
+    },
+    {
+      "cycle": 2,
+      "fixture": "complete law but missing evidence",
+      "required_observation": "authority failure for missing required evidence; scoped iZ question; no invented counterproof"
+    },
+    {
+      "cycle": 3,
+      "fixture": "all offered candidates eliminated",
+      "required_observation": "no valid proposal; elimination reasons retained; no forced positive"
+    },
+    {
+      "cycle": 4,
+      "fixture": "current valid bounded action",
+      "required_observation": "independent verification and commit before output/reset"
+    },
+    {
+      "cycle": 5,
+      "fixture": "new cycle: worse proposal eliminated and another valid action available",
+      "required_observation": "fresh current evidence and revalidation; prior success does not waive checks; retained memory links the cycle"
+    }
+  ],
+  "semantic_separations": [
+    "Incomplete-law HOLD, authority refusal, transport uncertainty and scientific counterproof are distinct.",
+    "HardwareDirective::Hold in source means retain current territory, not incomplete-law HOLD.",
+    "A D-BAB witness records what happened; it does not perform the authority decision.",
+    "A stored negative/missing-evidence trace is not automatically a scientific refutation of the thesis.",
+    "No cycle count guarantees success.",
+    "Reset clears ephemeral state and does not erase committed continuity evidence.",
+    "The SHA256 tie-breaker is ordering, not authorization or a guarantee of unequal content."
+  ],
+  "validation": {
+    "tests_executed_for_this_map": false,
+    "capsule_working_claim": false,
+    "required_before_claim": [
+      "execute declared five-cycle fixture",
+      "adversarial tests for scope/trace/order/replay tampering and invalid candidate rejection",
+      "verify same evidence leads to same bounded result",
+      "verify commit/output/reset order and persistent context links"
+    ]
+  },
+  "sources": [
+    {
+      "id": "C_GCL",
+      "source_root": "C",
+      "relative_path": "gcl-constitution/src/constitution.rs",
+      "whole_file_sha256": "2ea2645c63d8ca617b3659d2f8480f11f2375845b16e81eb43808a181088807b",
+      "file_bytes": 23613,
+      "line_count": 538,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 7,
+          "end": 40
+        },
+        {
+          "start": 45,
+          "end": 69
+        },
+        {
+          "start": 300,
+          "end": 328
+        },
+        {
+          "start": 372,
+          "end": 395
+        }
+      ],
+      "mechanism": "Phase jurisdiction and three executive roles",
+      "capsule_adaptation": "Adapt the role boundaries and phase checks; no copied SupremeDirective or inherited restart state machine."
+    },
+    {
+      "id": "C_PHASE",
+      "source_root": "C",
+      "relative_path": "gcl-constitution/src/phase.rs",
+      "whole_file_sha256": "8047c0191c0a4c72b648696d06c8f5584a2ce1ae897602c807dcb9da46648881",
+      "file_bytes": 679,
+      "line_count": 20,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 1,
+          "end": 20
+        }
+      ],
+      "mechanism": "Coordination, reasoning, verification phases",
+      "capsule_adaptation": "Preserve phase order at capsule boundaries."
+    },
+    {
+      "id": "C_LIGHT",
+      "source_root": "C",
+      "relative_path": "light/src/light_coordinator.rs",
+      "whole_file_sha256": "a7a8359b1ae53db34ea4a08e837a560189edce27591832c664c5f15d312196a2",
+      "file_bytes": 41704,
+      "line_count": 1032,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 5,
+          "end": 20
+        },
+        {
+          "start": 378,
+          "end": 391
+        },
+        {
+          "start": 439,
+          "end": 445
+        }
+      ],
+      "mechanism": "LIGHT coordination and dispatch prerequisite checks",
+      "capsule_adaptation": "LIGHT anchors and coordinates a case; it does not decide the action verdict."
+    },
+    {
+      "id": "C_QUANTUM",
+      "source_root": "C",
+      "relative_path": "quantum/src/orchestrator.rs",
+      "whole_file_sha256": "e86bb6f328b02caf1e35872bef028dc5da0799b2b0950a993e7c7177f5c63e67",
+      "file_bytes": 22826,
+      "line_count": 512,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 7,
+          "end": 15
+        },
+        {
+          "start": 129,
+          "end": 147
+        },
+        {
+          "start": 191,
+          "end": 240
+        },
+        {
+          "start": 312,
+          "end": 318
+        }
+      ],
+      "mechanism": "QUANTUM elimination, proposal and ephemeral reset",
+      "capsule_adaptation": "Use elimination-before-proposal and reset ownership, not the source scoring formula or full operator network."
+    },
+    {
+      "id": "C_PD_LIGHT",
+      "source_root": "C",
+      "relative_path": "light/src/pd_light.rs",
+      "whole_file_sha256": "73ad603c73c01b0883eeb8f57873affaf986c5f083520d6c128cab4ee54c29c8",
+      "file_bytes": 47779,
+      "line_count": 1115,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 1,
+          "end": 8
+        },
+        {
+          "start": 64,
+          "end": 78
+        }
+      ],
+      "mechanism": "Verified output plus iZ delivery",
+      "capsule_adaptation": "Preserve delivery after verification; this is not an extraction of the native pair protocol."
+    },
+    {
+      "id": "C_SPINE_ORDER",
+      "source_root": "C",
+      "relative_path": "shadow/src/shadow_gateway.rs",
+      "whole_file_sha256": "ad09991cd6ed7f61756566f02b36d9185477dcf41923001a4ddf553e5a0af212",
+      "file_bytes": 87582,
+      "line_count": 2059,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 460,
+          "end": 511
+        }
+      ],
+      "mechanism": "Spine before Matrix/pipeline",
+      "capsule_adaptation": "Retain the staging and order dependency; later Matrix material cannot repair an earlier unchecked Spine input."
+    },
+    {
+      "id": "C_SPINE",
+      "source_root": "C",
+      "relative_path": "shadow/src/shadow_spine.rs",
+      "whole_file_sha256": "aa2ff0c80543fefac8678e050d41ef96318b50f2c6d02d507745d3fc731c8cc1",
+      "file_bytes": 38087,
+      "line_count": 923,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 170,
+          "end": 190
+        },
+        {
+          "start": 214,
+          "end": 247
+        }
+      ],
+      "mechanism": "Multi-verification attestation and conjunction",
+      "capsule_adaptation": "Use separate mandatory checks and their conjunction, not majority voting or native confidence."
+    },
+    {
+      "id": "C_PIPELINE",
+      "source_root": "C",
+      "relative_path": "shadow/src/shadow_pipeline.rs",
+      "whole_file_sha256": "e607623b7f537e7247fd54cdc66c29e37db0baf0d77185807901ec51d15a7201",
+      "file_bytes": 10034,
+      "line_count": 207,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 87,
+          "end": 179
+        }
+      ],
+      "mechanism": "Router, Matrix, route checks, Judiciary and final boundary",
+      "capsule_adaptation": "Preserve relative ordering in the reduced capsule; no claim to implement every native route/node."
+    },
+    {
+      "id": "C_MATRIX",
+      "source_root": "C",
+      "relative_path": "shadow/src/shadow_matrix.rs",
+      "whole_file_sha256": "f927bf9fc768b26e0a5d78bd07941e4e53652b2fb659ab978edac7733206aa8f",
+      "file_bytes": 4593,
+      "line_count": 99,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 28,
+          "end": 37
+        },
+        {
+          "start": 43,
+          "end": 54
+        },
+        {
+          "start": 82,
+          "end": 95
+        }
+      ],
+      "mechanism": "Historical Matrix dimensions and distinct bit",
+      "capsule_adaptation": "Reference only: do not import historical score queries or coefficients into the current-action capsule."
+    },
+    {
+      "id": "A_MATRIX",
+      "source_root": "A",
+      "relative_path": "shadow/src/shadow_matrix.rs",
+      "whole_file_sha256": "a9c162818c2b42aa6f6b0540f4b289e54a99bc31acab93d468b2ef08bc1958dc",
+      "file_bytes": 10065,
+      "line_count": 199,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 46,
+          "end": 94
+        },
+        {
+          "start": 126,
+          "end": 141
+        }
+      ],
+      "mechanism": "Current-case Matrix projection",
+      "capsule_adaptation": "Adapt the current-material scope check; missing obligations and counterproof cannot be averaged away."
+    },
+    {
+      "id": "A_NBES",
+      "source_root": "A",
+      "relative_path": "shadow/src/shadow_gateway.rs",
+      "whole_file_sha256": "e5eb4152f87f6e4de18875f9c998eb7a2906b173d0d3824b4552ae77dc155d4e",
+      "file_bytes": 104803,
+      "line_count": 2388,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 1230,
+          "end": 1308
+        }
+      ],
+      "mechanism": "NBES and currently presented KiE case",
+      "capsule_adaptation": "Reference the separation of process, evidence and case checks; no import of the full KiE model path."
+    },
+    {
+      "id": "A_DBAB_WITNESS",
+      "source_root": "A",
+      "relative_path": "shadow-contracts/src/pd_failure_witness.rs",
+      "whole_file_sha256": "556b7a65862272f4a4b7e33bb89eae2ac1afca05ccf2071ad21c16ea89f76cdb",
+      "file_bytes": 43285,
+      "line_count": 709,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 1,
+          "end": 3
+        },
+        {
+          "start": 95,
+          "end": 109
+        },
+        {
+          "start": 186,
+          "end": 205
+        }
+      ],
+      "mechanism": "Data-only witness of actual request and refusal",
+      "capsule_adaptation": "Use precondition/failure witness semantics. A completed-request witness does not prove an earlier crash journal."
+    },
+    {
+      "id": "A_DBAB_NOT_REUSED",
+      "source_root": "A",
+      "relative_path": "shadow-contracts/src/materialization/dbab.rs",
+      "whole_file_sha256": "335ebf27f488d7b37e921644055cfa12a55199fb25919386cdaf0623f97ec79e",
+      "file_bytes": 24404,
+      "line_count": 494,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 1,
+          "end": 8
+        },
+        {
+          "start": 175,
+          "end": 191
+        },
+        {
+          "start": 270,
+          "end": 292
+        }
+      ],
+      "mechanism": "Later POC-native binding operator",
+      "capsule_adaptation": "Explicitly not reused as a neutral witness: bind constructs BoundObligation and is described as authority-producing."
+    },
+    {
+      "id": "A_NOI_PRIMITIVE",
+      "source_root": "A",
+      "relative_path": "zero-noi/src/lib.rs",
+      "whole_file_sha256": "db6ba97d1c8c95d642f261a423336c4510212abe2f162ce1fe4db5f471619cd9",
+      "file_bytes": 1228,
+      "line_count": 28,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 1,
+          "end": 18
+        }
+      ],
+      "mechanism": "Borrowed neutral pulse",
+      "capsule_adaptation": "Smallest reusable method: trigger=1; state, knowledge, authority, verdict and persistence=0. No callback authority."
+    },
+    {
+      "id": "A_NOI_CALLER",
+      "source_root": "A",
+      "relative_path": "zero-noi/caller.rs",
+      "whole_file_sha256": "07fee287c185a7b7b664c4d1e613ec3e3718d7c9ce2411f6338b199d8a7209d7",
+      "file_bytes": 6875,
+      "line_count": 105,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 1,
+          "end": 3
+        },
+        {
+          "start": 17,
+          "end": 26
+        },
+        {
+          "start": 62,
+          "end": 74
+        }
+      ],
+      "mechanism": "Caller-owned scoped delivery",
+      "capsule_adaptation": "Caller invokes the operation once and preserves its failure; the pulse does not authorize it."
+    },
+    {
+      "id": "A_NOI_LATER",
+      "source_root": "A",
+      "relative_path": "shadow-contracts/src/materialization/zero_noi.rs",
+      "whole_file_sha256": "1adaba0201158ccdf304132acf67b59eebc0edcb097d95c5bc1fe407d2ea95cf",
+      "file_bytes": 22413,
+      "line_count": 546,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 1,
+          "end": 20
+        },
+        {
+          "start": 80,
+          "end": 117
+        }
+      ],
+      "mechanism": "Later evidenced trigger adapter",
+      "capsule_adaptation": "Later materialization, not a v1.8.9 source extraction; distinct from the neutral borrowed pulse."
+    },
+    {
+      "id": "A_PD",
+      "source_root": "A",
+      "relative_path": "shadow-contracts/src/pd_memory.rs",
+      "whole_file_sha256": "fd5364567ee1e86600b634b510a80ccaca2532c6c36768b4ecc5415e2c68ebe5",
+      "file_bytes": 39097,
+      "line_count": 1101,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 23,
+          "end": 65
+        },
+        {
+          "start": 69,
+          "end": 134
+        },
+        {
+          "start": 137,
+          "end": 193
+        },
+        {
+          "start": 242,
+          "end": 276
+        },
+        {
+          "start": 298,
+          "end": 368
+        }
+      ],
+      "mechanism": "SHA256 context identity, witness classes and linked trace",
+      "capsule_adaptation": "Adapt canonical encoding, scope and predecessor checks. Hash/replay integrity is not issuer authentication or authorization."
+    },
+    {
+      "id": "A_PD_STORE",
+      "source_root": "A",
+      "relative_path": "shadow/src/pd_memory_store.rs",
+      "whole_file_sha256": "7cb4094ed78c525105f53c07b695fb81050f5c62627e917f6b0f8e9377e47682",
+      "file_bytes": 58266,
+      "line_count": 1122,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 140,
+          "end": 273
+        }
+      ],
+      "mechanism": "Owner prepare/publish boundary",
+      "capsule_adaptation": "Keep storage owner and admission checks separate from constructing a record."
+    },
+    {
+      "id": "A_IZ_ORDER",
+      "source_root": "A",
+      "relative_path": "shadow/src/native_cycle.rs",
+      "whole_file_sha256": "c81b6e558074f41763964ad5f89b2e2ce88dd15591a00c8b58a1bdd7b9b8df31",
+      "file_bytes": 19338,
+      "line_count": 378,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 183,
+          "end": 200
+        }
+      ],
+      "mechanism": "Prerequisites, durable T1, then final iZ",
+      "capsule_adaptation": "Preserve verify/commit/output ordering; do not equate a proposed question with a committed result."
+    },
+    {
+      "id": "A_CAUSES",
+      "source_root": "A",
+      "relative_path": "shadow-contracts/src/iz_frontier.rs",
+      "whole_file_sha256": "604f5c6c441e274fc11cfc1c8c6f2396c65dac83db09456b9cac28ec199f6808",
+      "file_bytes": 78353,
+      "line_count": 1306,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 31,
+          "end": 79
+        },
+        {
+          "start": 90,
+          "end": 121
+        }
+      ],
+      "mechanism": "Missing material versus counterproof versus unresolved cause",
+      "capsule_adaptation": "Keep causes distinct and retain scoped questions; observation codes are not verdicts."
+    },
+    {
+      "id": "A_PAIR_BOUNDARY",
+      "source_root": "A",
+      "relative_path": "shadow-contracts/src/boundary/verification_receipt.rs",
+      "whole_file_sha256": "b3785d51475592fd2b477bd717c1e04964c8c6dfab792572b496b6d18ae4416c",
+      "file_bytes": 4417,
+      "line_count": 106,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 25,
+          "end": 26
+        },
+        {
+          "start": 39,
+          "end": 71
+        }
+      ],
+      "mechanism": "Native paired receipt boundary",
+      "capsule_adaptation": "Comparison only: POC011 scalar action verification is not native (0,0)/(1,1), native seal or native receipt."
+    },
+    {
+      "id": "A_HW_RECEIPT",
+      "source_root": "A",
+      "relative_path": "quantum/src/hw_real/runtime.rs",
+      "whole_file_sha256": "ccd22f29a56974ee70d65226ff309ba1e8ea0a52c56e1921da4cf28de0134a6f",
+      "file_bytes": 21247,
+      "line_count": 487,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 67,
+          "end": 99
+        },
+        {
+          "start": 306,
+          "end": 312
+        },
+        {
+          "start": 345,
+          "end": 364
+        }
+      ],
+      "mechanism": "Resource release accounting",
+      "capsule_adaptation": "Reference limitation: completed is lease_released; tracked buffers are not an OS attestation of physical release."
+    },
+    {
+      "id": "A_HW_HOLD",
+      "source_root": "A",
+      "relative_path": "quantum/src/hcp_pro.rs",
+      "whole_file_sha256": "56d5e878c4adbd13a4671ee63910cdd1ee3e3144367a1963fd135fd27c143f51",
+      "file_bytes": 32529,
+      "line_count": 777,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 37,
+          "end": 54
+        },
+        {
+          "start": 172,
+          "end": 185
+        }
+      ],
+      "mechanism": "Hardware Hold means keep current territory",
+      "capsule_adaptation": "Do not conflate this label with incomplete-law HOLD or an authority refusal."
+    },
+    {
+      "id": "A_RESET",
+      "source_root": "A",
+      "relative_path": "quantum/src/orchestrator.rs",
+      "whole_file_sha256": "e86bb6f328b02caf1e35872bef028dc5da0799b2b0950a993e7c7177f5c63e67",
+      "file_bytes": 22826,
+      "line_count": 512,
+      "line_numbering": "1-based inclusive; decoded UTF-8 logical lines; SHA256 covers original raw bytes including line endings",
+      "line_ranges": [
+        {
+          "start": 312,
+          "end": 318
+        }
+      ],
+      "mechanism": "Ephemeral cycle reset",
+      "capsule_adaptation": "Reset per-cycle state after the final action while retained evidence remains owned by persistent memory."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.06s
+     Running unittests src\lib.rs (C:\Users\AG\Desktop\ess-mai-project\_audit_build_cache\poc011\debug\deps\poc011-aac04d7149ebfd6f.exe)
+
+running 1 test
+test authority::tests::corrupt_hardware_receipt_loses_seal_and_produces_question ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 31 filtered out; finished in 0.01s
+

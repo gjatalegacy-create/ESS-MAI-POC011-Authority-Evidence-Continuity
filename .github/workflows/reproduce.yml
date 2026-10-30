@@ -1,0 +1,29 @@
+name: Reproduce bounded POC011
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reproduce:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Prepare official Rust toolchain
+        run: rustup toolchain install stable --profile minimal --component rustfmt
+      - name: Select Rust toolchain
+        run: rustup default stable
+      - name: Fetch pinned dependencies
+        run: cargo fetch --locked
+      - name: Verify archived evidence and manifest
+        run: python tools/verify.py evidence/final/demo --self-test --manifest SHA256SUMS
+      - name: Reproduce tests and five cycles
+        run: python tools/reproduce.py ci-evidence --target-dir target

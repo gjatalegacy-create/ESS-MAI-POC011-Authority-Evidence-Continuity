@@ -1,0 +1,39 @@
+{
+  "schema": "poc011-hardware-provenance-v1",
+  "implementation": "src/hardware.rs",
+  "scope": "Bounded process-owned byte allocation, full little-endian write/readback, SHA-256 of actual payload bytes, and monotonic elapsed-time observation.",
+  "sources": [
+    {
+      "system": "ESS-MAI v1.8.9 phase 015",
+      "path": "quantum/src/hw_real/hw_manager.rs",
+      "lines": [109, 145],
+      "file_sha256": "dd52df8229b1e7c00ff715be6fb13ea7cc7176a29a82b92b07ab0ff54c63bf10",
+      "block_sha256_lf_utf8": "2a1ee07a575a0292e06482ce49f8c7949c98f25acf7dbba64705f0398f76d560",
+      "method_retained": "A requested resource cannot exceed its explicit allowance. Integer byte accounting and bounded parallel capacity are separate from epistemic judgment.",
+      "adaptation": "The capsule takes an explicit byte allowance and refuses an incomplete payload instead of silently truncating the model outputs. It does not import the full manager or claim to reserve a proportion of host RAM."
+    },
+    {
+      "system": "AIGovern-Cyber bounded runtime derivative",
+      "path": "quantum/src/hw_real/hw_core.rs",
+      "lines": [202, 212],
+      "file_sha256": "168d837e0e6d7318193781ce73712ce4ad67eae5ba8e7b2b1fd5acd6ebe32525",
+      "block_sha256_lf_utf8": "fb2cb273ddcaeeaba1f9daf918a6340b2ebd2b8aada37bf2608e13b71ffaacf6",
+      "method_retained": "n = min(floor(B/C), 4), with no unfunded minimum slot.",
+      "adaptation": "A pure helper accepts an explicit nonzero per-slot byte cost. Zero affordable slots stays zero; it does not launch an operator or create authority."
+    }
+  ],
+  "block_hash_encoding": "Inclusive one-based source lines; normalize line endings to LF; append one LF after the final selected line; encode UTF-8 without BOM; SHA-256.",
+  "new_capsule_work": [
+    "Use try_reserve_exact for at most 65536 logical payload bytes; allocation failure returns an error.",
+    "Encode every i64 as eight little-endian bytes, read every value back from the owned allocation, and hash those bytes.",
+    "Measure elapsed time with std::time::Instant from allocation through write/readback/hash. Refuse a receipt if the observed time exceeds the supplied budget."
+  ],
+  "limitations": [
+    "The allocation is process-owned virtual memory. Logical byte length is not allocator capacity, committed physical RAM, cache residency, or direct DRAM control.",
+    "The timer observes elapsed wall time and includes scheduling effects. It is neither CPU-cycle measurement nor a hard real-time preemption mechanism.",
+    "The byte ceiling limits the payload, not the complete process working set, receipt strings, allocator metadata, or hashing state.",
+    "No physical energy or power is measured. physical_energy_joules is always null; no watts or joules are invented.",
+    "The receipt is evidence of the performed bounded computation, not an authority token, authenticity signature, or proof against a malicious host.",
+    "Payload identity and readback are deterministic; measured timing is expected to vary between executions."
+  ]
+}

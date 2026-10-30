@@ -1,0 +1,368 @@
+{
+  "report": {
+    "input": {
+      "cycle": 2,
+      "context": "Bounded affine compute admission: a five-turn conversation",
+      "scope": "poc011/affine-admission",
+      "action_id": "model-A",
+      "question": "The risk limit is 10; what evidence is still missing?",
+      "law": {
+        "jurisdiction": "poc011/affine-admission",
+        "risk_limit": 10,
+        "byte_budget": 4096,
+        "time_budget_ns": 1000000000
+      },
+      "candidates": [
+        {
+          "id": "safe",
+          "a": 2,
+          "b": 1,
+          "samples": []
+        }
+      ]
+    },
+    "status": "HoldMissingEvidence",
+    "verification": 0,
+    "selected_candidate_sha256": null,
+    "assessments": [
+      {
+        "candidate_id": "safe",
+        "candidate_sha256": "257693dd603af4cc08b971c3f28e055027a4a93350a5489ce9edd369a413c040",
+        "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+        "status": "MissingEvidence",
+        "missing_x": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "counterexamples": [],
+        "values": [
+          1,
+          3,
+          5,
+          7,
+          9
+        ],
+        "risk": 9,
+        "gain": 25
+      }
+    ],
+    "hardware": null,
+    "gates": [
+      {
+        "name": "Spine.scope",
+        "passed": true
+      },
+      {
+        "name": "Spine.law_complete",
+        "passed": true
+      },
+      {
+        "name": "Spine.lgc_exact",
+        "passed": true
+      },
+      {
+        "name": "Spine.current_evidence",
+        "passed": true
+      },
+      {
+        "name": "Spine.authority_order",
+        "passed": true
+      },
+      {
+        "name": "Spine.hardware_readback",
+        "passed": false
+      },
+      {
+        "name": "Spine.quantum_completion",
+        "passed": false
+      },
+      {
+        "name": "Matrix.current_dossier",
+        "passed": false
+      },
+      {
+        "name": "Judiciary.single_use_local_ffi",
+        "passed": false
+      }
+    ],
+    "seal_500": "1c88193d2733f5d8f025ffe433ee95fee5cc92711cad44545b29d446a557618d",
+    "lgc": {
+      "input_sha256": "f3fee72b911c81d631e74c2905847f30421b92abb509d4439093fa62f65a376e",
+      "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+      "previous_cycle_sha256": "81735f286406a575a5dae13cf8e584db9d0ebd6a0a76bc82dc19bf7c956eb28f",
+      "steps": [
+        {
+          "sequence": 0,
+          "role": "D-BAB",
+          "operation": "preconditions",
+          "payload": {
+            "evidence": {
+              "input_sha256": "f3fee72b911c81d631e74c2905847f30421b92abb509d4439093fa62f65a376e",
+              "law_gaps": []
+            },
+            "owner": "LIGHT"
+          },
+          "previous_sha256": "8e5a9a8b46e37ab2bd3499d801ba606a03510a42a7008328df4c6a10bd9a96c7",
+          "sha256": "0e33429005911debb91918bdc07d300c3875565ce1c1dc1043824135bd0e47d7"
+        },
+        {
+          "sequence": 1,
+          "role": "0-NOI",
+          "operation": "trigger",
+          "payload": {
+            "input_sha256": "f3fee72b911c81d631e74c2905847f30421b92abb509d4439093fa62f65a376e",
+            "owner": "LIGHT",
+            "vector": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "previous_sha256": "0e33429005911debb91918bdc07d300c3875565ce1c1dc1043824135bd0e47d7",
+          "sha256": "a644a13183cc139889a6a7c0ec653a58a6b2312bd81f7ca0288a6f07f7305431"
+        },
+        {
+          "sequence": 2,
+          "role": "LIGHT",
+          "operation": "coordinate",
+          "payload": {
+            "candidate_hashes": [
+              "257693dd603af4cc08b971c3f28e055027a4a93350a5489ce9edd369a413c040"
+            ],
+            "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+            "input_sha256": "f3fee72b911c81d631e74c2905847f30421b92abb509d4439093fa62f65a376e",
+            "memory_refs": [
+              {
+                "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+                "cycle": 1,
+                "negative_candidate_sha256": [],
+                "positive_candidate_sha256": [],
+                "question_count": 1,
+                "receipt_sha256": "81735f286406a575a5dae13cf8e584db9d0ebd6a0a76bc82dc19bf7c956eb28f"
+              }
+            ],
+            "previous_cycle_sha256": "81735f286406a575a5dae13cf8e584db9d0ebd6a0a76bc82dc19bf7c956eb28f"
+          },
+          "previous_sha256": "a644a13183cc139889a6a7c0ec653a58a6b2312bd81f7ca0288a6f07f7305431",
+          "sha256": "bebcf1d88479720e798566201d81fc1bc0d7a8054fae8b72a93185e19157e81f"
+        },
+        {
+          "sequence": 3,
+          "role": "D-BAB",
+          "operation": "preconditions",
+          "payload": {
+            "evidence": {
+              "coordination_sha256": "52ad889eb9fc3da38e490fcc22a2bc9fcea081f1c6da342a6d8b5edb62e76299",
+              "law_gaps": []
+            },
+            "owner": "QUANTUM"
+          },
+          "previous_sha256": "bebcf1d88479720e798566201d81fc1bc0d7a8054fae8b72a93185e19157e81f",
+          "sha256": "285ec4228198d92c74b0b76ed0c3bf5110a6340fd2b32967c0439a63a5b6dc45"
+        },
+        {
+          "sequence": 4,
+          "role": "0-NOI",
+          "operation": "trigger",
+          "payload": {
+            "input_sha256": "f3fee72b911c81d631e74c2905847f30421b92abb509d4439093fa62f65a376e",
+            "owner": "QUANTUM",
+            "vector": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "previous_sha256": "285ec4228198d92c74b0b76ed0c3bf5110a6340fd2b32967c0439a63a5b6dc45",
+          "sha256": "5408773e9016721aedabb47adf717fe79363c75ec6b106769cb768d11587c61d"
+        },
+        {
+          "sequence": 5,
+          "role": "QUANTUM",
+          "operation": "eliminate",
+          "payload": {
+            "assessments": [
+              {
+                "candidate_id": "safe",
+                "candidate_sha256": "257693dd603af4cc08b971c3f28e055027a4a93350a5489ce9edd369a413c040",
+                "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+                "counterexamples": [],
+                "gain": 25,
+                "missing_x": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "risk": 9,
+                "status": "MissingEvidence",
+                "values": [
+                  1,
+                  3,
+                  5,
+                  7,
+                  9
+                ]
+              }
+            ],
+            "hardware": null,
+            "hardware_failure": null,
+            "selected": null,
+            "status": "HoldMissingEvidence"
+          },
+          "previous_sha256": "5408773e9016721aedabb47adf717fe79363c75ec6b106769cb768d11587c61d",
+          "sha256": "2c40074e0d64fc4ebed249fccb2441d939f269c46b23c7a50892c8ab8b6f7800"
+        },
+        {
+          "sequence": 6,
+          "role": "D-BAB",
+          "operation": "outcome",
+          "payload": {
+            "evidence": {
+              "assessment_sha256": "9151eb8a9dc239907869ee7d27898bd57c703a9aed8ba019e662a4ec5e4a46ed",
+              "hardware_failure": null,
+              "status": "HoldMissingEvidence"
+            },
+            "owner": "QUANTUM"
+          },
+          "previous_sha256": "2c40074e0d64fc4ebed249fccb2441d939f269c46b23c7a50892c8ab8b6f7800",
+          "sha256": "ad5d60302d55261938a372917cd54023cbd99cba32e76a9fefcfef8a355b45c3"
+        },
+        {
+          "sequence": 7,
+          "role": "D-BAB",
+          "operation": "preconditions",
+          "payload": {
+            "evidence": {
+              "received_tip": "ad5d60302d55261938a372917cd54023cbd99cba32e76a9fefcfef8a355b45c3"
+            },
+            "owner": "SHADOW"
+          },
+          "previous_sha256": "ad5d60302d55261938a372917cd54023cbd99cba32e76a9fefcfef8a355b45c3",
+          "sha256": "8df614129f78c2343f4f0a87e9df446ee4134ac435bf8bcc843df21e23c20c14"
+        },
+        {
+          "sequence": 8,
+          "role": "0-NOI",
+          "operation": "trigger",
+          "payload": {
+            "input_sha256": "f3fee72b911c81d631e74c2905847f30421b92abb509d4439093fa62f65a376e",
+            "owner": "SHADOW",
+            "vector": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "previous_sha256": "8df614129f78c2343f4f0a87e9df446ee4134ac435bf8bcc843df21e23c20c14",
+          "sha256": "48a2deb25a2010710cb805f30d44355441ab4e0f544a7e99d0dbc583948c8a07"
+        },
+        {
+          "sequence": 9,
+          "role": "SHADOW",
+          "operation": "spine",
+          "payload": {
+            "conjunction": false,
+            "gates": [
+              {
+                "name": "Spine.scope",
+                "passed": true
+              },
+              {
+                "name": "Spine.law_complete",
+                "passed": true
+              },
+              {
+                "name": "Spine.lgc_exact",
+                "passed": true
+              },
+              {
+                "name": "Spine.current_evidence",
+                "passed": true
+              },
+              {
+                "name": "Spine.authority_order",
+                "passed": true
+              },
+              {
+                "name": "Spine.hardware_readback",
+                "passed": false
+              },
+              {
+                "name": "Spine.quantum_completion",
+                "passed": false
+              }
+            ]
+          },
+          "previous_sha256": "48a2deb25a2010710cb805f30d44355441ab4e0f544a7e99d0dbc583948c8a07",
+          "sha256": "8b82da3a539b9f1f0a61c4ff9144fe755ae171d9869651058b910443607b10ab"
+        },
+        {
+          "sequence": 10,
+          "role": "SHADOW",
+          "operation": "matrix",
+          "payload": {
+            "negative_evidence_retained": 0,
+            "passed": false,
+            "selected": null
+          },
+          "previous_sha256": "8b82da3a539b9f1f0a61c4ff9144fe755ae171d9869651058b910443607b10ab",
+          "sha256": "72cecf80bbde974472ba6bfb3523ae5844179ff9cf3a337e0c696664ab2ba8d5"
+        },
+        {
+          "sequence": 11,
+          "role": "SHADOW",
+          "operation": "judiciary",
+          "payload": {
+            "all_required": true,
+            "ffi_consumed": false,
+            "verification": 0
+          },
+          "previous_sha256": "72cecf80bbde974472ba6bfb3523ae5844179ff9cf3a337e0c696664ab2ba8d5",
+          "sha256": "6d81510ae6b10f2492ac7b4011c1231e17616adc1af298487baf08ba2e841d57"
+        },
+        {
+          "sequence": 12,
+          "role": "D-BAB",
+          "operation": "outcome",
+          "payload": {
+            "evidence": {
+              "status": "HoldMissingEvidence",
+              "verification": 0
+            },
+            "owner": "SHADOW"
+          },
+          "previous_sha256": "6d81510ae6b10f2492ac7b4011c1231e17616adc1af298487baf08ba2e841d57",
+          "sha256": "5a6abd97175ed6d009f7e9691a0bd669527481be7e283bc0a02c848d52a3db5c"
+        }
+      ]
+    },
+    "output": "HoldMissingEvidence: no action admitted. Current evidence and its gaps remain explicit.",
+    "questions": [
+      "Provide current y evidence for candidate safe at x=[0, 1, 2, 3, 4] under y=a*x+b."
+    ]
+  },
+  "commit": {
+    "sequence": 2,
+    "receipt_sha256": "464a6c2e5afeeadb4184bbb58f7877e65e9f21ab1d29bd18e5333876b12970eb",
+    "effect_count": 0,
+    "new_effect": false,
+    "durable": true,
+    "readback_verified": true
+  },
+  "gcl_restart_after_durable_commit": true,
+  "next_cycle": 3
+}

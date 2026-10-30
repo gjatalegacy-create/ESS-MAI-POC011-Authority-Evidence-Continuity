@@ -1,0 +1,29 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running unittests src\lib.rs (C:\Users\AG\Desktop\ess-mai-project\_audit_build_cache\poc011\debug\deps\poc011-aac04d7149ebfd6f.exe)
+
+running 2 tests
+test storage::tests::rehashed_refusal_with_broken_lgc_is_rejected ... FAILED
+test storage::tests::rehashed_positive_with_changed_assessment_is_rejected ... FAILED
+
+failures:
+
+---- storage::tests::rehashed_refusal_with_broken_lgc_is_rejected stdout ----
+
+thread 'storage::tests::rehashed_refusal_with_broken_lgc_is_rejected' (11612) panicked at src\storage.rs:331:9:
+assertion failed: decode(&reframe(&record)).is_err()
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- storage::tests::rehashed_positive_with_changed_assessment_is_rejected stdout ----
+
+thread 'storage::tests::rehashed_positive_with_changed_assessment_is_rejected' (23628) panicked at src\storage.rs:339:9:
+assertion failed: decode(&reframe(&record)).is_err()
+
+
+failures:
+    storage::tests::rehashed_positive_with_changed_assessment_is_rejected
+    storage::tests::rehashed_refusal_with_broken_lgc_is_rejected
+
+test result: FAILED. 0 passed; 2 failed; 0 ignored; 0 measured; 30 filtered out; finished in 0.05s
+
+error: test failed, to rerun pass `--lib`
+exit_code=101

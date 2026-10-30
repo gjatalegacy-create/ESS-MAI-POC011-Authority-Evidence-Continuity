@@ -1,0 +1,11 @@
+   Compiling ess-mai-poc011-authority-evidence-continuity v0.1.0 (C:\Users\AG\Desktop\ess-mai-project\publication\poc011-authority-evidence-continuity)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.55s
+     Running unittests src\lib.rs (C:\Users\AG\Desktop\ess-mai-project\_audit_build_cache\poc011\debug\deps\poc011-aac04d7149ebfd6f.exe)
+
+running 3 tests
+test storage::tests::trailing_and_truncated_bytes_are_rejected ... ok
+test storage::tests::rehashed_refusal_with_broken_lgc_is_rejected ... ok
+test storage::tests::rehashed_positive_with_changed_assessment_is_rejected ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 29 filtered out; finished in 0.04s
+

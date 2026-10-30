@@ -1,0 +1,482 @@
+{
+  "report": {
+    "input": {
+      "cycle": 4,
+      "context": "Bounded affine compute admission: a five-turn conversation",
+      "scope": "poc011/affine-admission",
+      "action_id": "model-A",
+      "question": "Retain the counterexample and evaluate this corrected candidate.",
+      "law": {
+        "jurisdiction": "poc011/affine-admission",
+        "risk_limit": 10,
+        "byte_budget": 4096,
+        "time_budget_ns": 1000000000
+      },
+      "candidates": [
+        {
+          "id": "safe",
+          "a": 2,
+          "b": 1,
+          "samples": [
+            {
+              "x": 0,
+              "y": 1
+            },
+            {
+              "x": 1,
+              "y": 3
+            },
+            {
+              "x": 2,
+              "y": 5
+            },
+            {
+              "x": 3,
+              "y": 7
+            },
+            {
+              "x": 4,
+              "y": 9
+            }
+          ]
+        },
+        {
+          "id": "over-budget-model",
+          "a": 4,
+          "b": 1,
+          "samples": [
+            {
+              "x": 0,
+              "y": 1
+            },
+            {
+              "x": 1,
+              "y": 5
+            },
+            {
+              "x": 2,
+              "y": 9
+            },
+            {
+              "x": 3,
+              "y": 13
+            },
+            {
+              "x": 4,
+              "y": 17
+            }
+          ]
+        }
+      ]
+    },
+    "status": "VerifiedAction",
+    "verification": 1,
+    "selected_candidate_sha256": "ff4fec782f13402eb9c6254aa7073225f31071b96a892601c18457f0cd9a6d3a",
+    "assessments": [
+      {
+        "candidate_id": "safe",
+        "candidate_sha256": "ff4fec782f13402eb9c6254aa7073225f31071b96a892601c18457f0cd9a6d3a",
+        "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+        "status": "Eligible",
+        "missing_x": [],
+        "counterexamples": [],
+        "values": [
+          1,
+          3,
+          5,
+          7,
+          9
+        ],
+        "risk": 9,
+        "gain": 25
+      },
+      {
+        "candidate_id": "over-budget-model",
+        "candidate_sha256": "773af67916a35ece330cce63eb2322978d52093be92f8a8a79a1b1cca10213ef",
+        "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+        "status": "EliminatedCounterproof",
+        "missing_x": [],
+        "counterexamples": [
+          "candidate over-budget-model: x=3, |y|=13 > risk_limit=10",
+          "candidate over-budget-model: x=4, |y|=17 > risk_limit=10"
+        ],
+        "values": [
+          1,
+          5,
+          9,
+          13,
+          17
+        ],
+        "risk": 17,
+        "gain": 45
+      }
+    ],
+    "hardware": {
+      "actual_bytes": 40,
+      "byte_budget": 4096,
+      "elapsed_ns": 2200,
+      "payload_sha256": "c64643e27752cb748a3e5251755c75c620244e3140b06c4a1f2f7d17ba6e489d",
+      "physical_energy_joules": null,
+      "requested_bytes": 40,
+      "time_budget_ns": 1000000000,
+      "verified_readback": true
+    },
+    "gates": [
+      {
+        "name": "Spine.scope",
+        "passed": true
+      },
+      {
+        "name": "Spine.law_complete",
+        "passed": true
+      },
+      {
+        "name": "Spine.lgc_exact",
+        "passed": true
+      },
+      {
+        "name": "Spine.current_evidence",
+        "passed": true
+      },
+      {
+        "name": "Spine.authority_order",
+        "passed": true
+      },
+      {
+        "name": "Spine.hardware_readback",
+        "passed": true
+      },
+      {
+        "name": "Spine.quantum_completion",
+        "passed": true
+      },
+      {
+        "name": "Matrix.current_dossier",
+        "passed": true
+      },
+      {
+        "name": "Judiciary.single_use_local_ffi",
+        "passed": true
+      }
+    ],
+    "seal_500": "cac1b9c91699ed1f7131c69971e7b8ce134c479a100852bac71a5db17a4b81e4",
+    "lgc": {
+      "input_sha256": "7bdff199e5824e9a110e91f16505a471364085fd84cd141088fa53dbd011803d",
+      "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+      "previous_cycle_sha256": "082ab00816c15e439724c6fb3222aadeb4870016e84992be326572f6fdc88d34",
+      "steps": [
+        {
+          "sequence": 0,
+          "role": "D-BAB",
+          "operation": "preconditions",
+          "payload": {
+            "evidence": {
+              "input_sha256": "7bdff199e5824e9a110e91f16505a471364085fd84cd141088fa53dbd011803d",
+              "law_gaps": []
+            },
+            "owner": "LIGHT"
+          },
+          "previous_sha256": "56e2e4e1f8eccd6e7732fc9122417f34db9df17168ac8775203a1988d94f0e76",
+          "sha256": "64cdc5b3a63c0cfb3eb579336b3299e3c6f692fa7cf92f4610aefc1e7fffa0b4"
+        },
+        {
+          "sequence": 1,
+          "role": "0-NOI",
+          "operation": "trigger",
+          "payload": {
+            "input_sha256": "7bdff199e5824e9a110e91f16505a471364085fd84cd141088fa53dbd011803d",
+            "owner": "LIGHT",
+            "vector": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "previous_sha256": "64cdc5b3a63c0cfb3eb579336b3299e3c6f692fa7cf92f4610aefc1e7fffa0b4",
+          "sha256": "23e414094bd1de36918dd5456139f9f844fcd577df9bf1c671862b83030520cd"
+        },
+        {
+          "sequence": 2,
+          "role": "LIGHT",
+          "operation": "coordinate",
+          "payload": {
+            "candidate_hashes": [
+              "ff4fec782f13402eb9c6254aa7073225f31071b96a892601c18457f0cd9a6d3a",
+              "773af67916a35ece330cce63eb2322978d52093be92f8a8a79a1b1cca10213ef"
+            ],
+            "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+            "input_sha256": "7bdff199e5824e9a110e91f16505a471364085fd84cd141088fa53dbd011803d",
+            "memory_refs": [
+              {
+                "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+                "cycle": 1,
+                "negative_candidate_sha256": [],
+                "positive_candidate_sha256": [],
+                "question_count": 1,
+                "receipt_sha256": "81735f286406a575a5dae13cf8e584db9d0ebd6a0a76bc82dc19bf7c956eb28f"
+              },
+              {
+                "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+                "cycle": 2,
+                "negative_candidate_sha256": [],
+                "positive_candidate_sha256": [],
+                "question_count": 1,
+                "receipt_sha256": "464a6c2e5afeeadb4184bbb58f7877e65e9f21ab1d29bd18e5333876b12970eb"
+              },
+              {
+                "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+                "cycle": 3,
+                "negative_candidate_sha256": [
+                  "773af67916a35ece330cce63eb2322978d52093be92f8a8a79a1b1cca10213ef"
+                ],
+                "positive_candidate_sha256": [],
+                "question_count": 2,
+                "receipt_sha256": "082ab00816c15e439724c6fb3222aadeb4870016e84992be326572f6fdc88d34"
+              }
+            ],
+            "previous_cycle_sha256": "082ab00816c15e439724c6fb3222aadeb4870016e84992be326572f6fdc88d34"
+          },
+          "previous_sha256": "23e414094bd1de36918dd5456139f9f844fcd577df9bf1c671862b83030520cd",
+          "sha256": "f3e2e90801704c17a9e9e864645cfaea4835b09f7cb34d8ac27bd300c6786f87"
+        },
+        {
+          "sequence": 3,
+          "role": "D-BAB",
+          "operation": "preconditions",
+          "payload": {
+            "evidence": {
+              "coordination_sha256": "646ec5f96132cd7e3a8dd6cf427794d0470ed410e21223650241ab04fbe9254f",
+              "law_gaps": []
+            },
+            "owner": "QUANTUM"
+          },
+          "previous_sha256": "f3e2e90801704c17a9e9e864645cfaea4835b09f7cb34d8ac27bd300c6786f87",
+          "sha256": "cca3c2a0e50496b95e90e78432980a76a99f49d418a7a798318553a683756303"
+        },
+        {
+          "sequence": 4,
+          "role": "0-NOI",
+          "operation": "trigger",
+          "payload": {
+            "input_sha256": "7bdff199e5824e9a110e91f16505a471364085fd84cd141088fa53dbd011803d",
+            "owner": "QUANTUM",
+            "vector": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "previous_sha256": "cca3c2a0e50496b95e90e78432980a76a99f49d418a7a798318553a683756303",
+          "sha256": "b6258dca75035afa485f89bdbb895aa83a105abdde377d96cce548fd756f56d3"
+        },
+        {
+          "sequence": 5,
+          "role": "QUANTUM",
+          "operation": "eliminate",
+          "payload": {
+            "assessments": [
+              {
+                "candidate_id": "safe",
+                "candidate_sha256": "ff4fec782f13402eb9c6254aa7073225f31071b96a892601c18457f0cd9a6d3a",
+                "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+                "counterexamples": [],
+                "gain": 25,
+                "missing_x": [],
+                "risk": 9,
+                "status": "Eligible",
+                "values": [
+                  1,
+                  3,
+                  5,
+                  7,
+                  9
+                ]
+              },
+              {
+                "candidate_id": "over-budget-model",
+                "candidate_sha256": "773af67916a35ece330cce63eb2322978d52093be92f8a8a79a1b1cca10213ef",
+                "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+                "counterexamples": [
+                  "candidate over-budget-model: x=3, |y|=13 > risk_limit=10",
+                  "candidate over-budget-model: x=4, |y|=17 > risk_limit=10"
+                ],
+                "gain": 45,
+                "missing_x": [],
+                "risk": 17,
+                "status": "EliminatedCounterproof",
+                "values": [
+                  1,
+                  5,
+                  9,
+                  13,
+                  17
+                ]
+              }
+            ],
+            "hardware": {
+              "actual_bytes": 40,
+              "byte_budget": 4096,
+              "elapsed_ns": 2200,
+              "payload_sha256": "c64643e27752cb748a3e5251755c75c620244e3140b06c4a1f2f7d17ba6e489d",
+              "physical_energy_joules": null,
+              "requested_bytes": 40,
+              "time_budget_ns": 1000000000,
+              "verified_readback": true
+            },
+            "hardware_failure": null,
+            "selected": "ff4fec782f13402eb9c6254aa7073225f31071b96a892601c18457f0cd9a6d3a",
+            "status": "CandidateReady"
+          },
+          "previous_sha256": "b6258dca75035afa485f89bdbb895aa83a105abdde377d96cce548fd756f56d3",
+          "sha256": "f1d228b6bdba48f66a43534bc4d51da1f27de3f830a88b37413965d1750e0421"
+        },
+        {
+          "sequence": 6,
+          "role": "D-BAB",
+          "operation": "outcome",
+          "payload": {
+            "evidence": {
+              "assessment_sha256": "156e9c5e7ea5da1da95cf4362939d02e195989c1f3e1a8de2648fecd4e749e4d",
+              "hardware_failure": null,
+              "status": "CandidateReady"
+            },
+            "owner": "QUANTUM"
+          },
+          "previous_sha256": "f1d228b6bdba48f66a43534bc4d51da1f27de3f830a88b37413965d1750e0421",
+          "sha256": "088f132eea032a592947230438f584a2048cc8d7851b307074d64ac5eabd0cf3"
+        },
+        {
+          "sequence": 7,
+          "role": "D-BAB",
+          "operation": "preconditions",
+          "payload": {
+            "evidence": {
+              "received_tip": "088f132eea032a592947230438f584a2048cc8d7851b307074d64ac5eabd0cf3"
+            },
+            "owner": "SHADOW"
+          },
+          "previous_sha256": "088f132eea032a592947230438f584a2048cc8d7851b307074d64ac5eabd0cf3",
+          "sha256": "e87a6b81373566df2d914b0e99515360dc893c0654d258e40c3280358e26af60"
+        },
+        {
+          "sequence": 8,
+          "role": "0-NOI",
+          "operation": "trigger",
+          "payload": {
+            "input_sha256": "7bdff199e5824e9a110e91f16505a471364085fd84cd141088fa53dbd011803d",
+            "owner": "SHADOW",
+            "vector": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "previous_sha256": "e87a6b81373566df2d914b0e99515360dc893c0654d258e40c3280358e26af60",
+          "sha256": "d6fe14d8a322de1c70438e3dbdb1dfd4e3556784071cc0bdc810d480df38c716"
+        },
+        {
+          "sequence": 9,
+          "role": "SHADOW",
+          "operation": "spine",
+          "payload": {
+            "conjunction": true,
+            "gates": [
+              {
+                "name": "Spine.scope",
+                "passed": true
+              },
+              {
+                "name": "Spine.law_complete",
+                "passed": true
+              },
+              {
+                "name": "Spine.lgc_exact",
+                "passed": true
+              },
+              {
+                "name": "Spine.current_evidence",
+                "passed": true
+              },
+              {
+                "name": "Spine.authority_order",
+                "passed": true
+              },
+              {
+                "name": "Spine.hardware_readback",
+                "passed": true
+              },
+              {
+                "name": "Spine.quantum_completion",
+                "passed": true
+              }
+            ]
+          },
+          "previous_sha256": "d6fe14d8a322de1c70438e3dbdb1dfd4e3556784071cc0bdc810d480df38c716",
+          "sha256": "c18c11f3c90a6cb7560059db91746d69333180ce98ed056545df523ec4752d4f"
+        },
+        {
+          "sequence": 10,
+          "role": "SHADOW",
+          "operation": "matrix",
+          "payload": {
+            "negative_evidence_retained": 1,
+            "passed": true,
+            "selected": "ff4fec782f13402eb9c6254aa7073225f31071b96a892601c18457f0cd9a6d3a"
+          },
+          "previous_sha256": "c18c11f3c90a6cb7560059db91746d69333180ce98ed056545df523ec4752d4f",
+          "sha256": "9fed60d1a8e2c5e5881d43eb221ee1efd3e1daeea6be4a2671f8096a2b08529b"
+        },
+        {
+          "sequence": 11,
+          "role": "SHADOW",
+          "operation": "judiciary",
+          "payload": {
+            "all_required": true,
+            "ffi_consumed": true,
+            "verification": 1
+          },
+          "previous_sha256": "9fed60d1a8e2c5e5881d43eb221ee1efd3e1daeea6be4a2671f8096a2b08529b",
+          "sha256": "2f53f90d67bcba3eefe9377655ccaf052e0c64aa3fdcd78c0497c83aef157cdb"
+        },
+        {
+          "sequence": 12,
+          "role": "D-BAB",
+          "operation": "outcome",
+          "payload": {
+            "evidence": {
+              "status": "VerifiedAction",
+              "verification": 1
+            },
+            "owner": "SHADOW"
+          },
+          "previous_sha256": "2f53f90d67bcba3eefe9377655ccaf052e0c64aa3fdcd78c0497c83aef157cdb",
+          "sha256": "3e0ef31f07285a7567e604a5413b343b70b0a42d8584f946c63ea2362f197289"
+        }
+      ]
+    },
+    "output": "Verified bounded action: ff4fec782f13402eb9c6254aa7073225f31071b96a892601c18457f0cd9a6d3a. Scope: poc011/affine-admission. No claim beyond the finite model.",
+    "questions": [
+      "candidate over-budget-model: x=3, |y|=13 > risk_limit=10. What corrected candidate or evidence addresses this exact counterexample within the same law?",
+      "candidate over-budget-model: x=4, |y|=17 > risk_limit=10. What corrected candidate or evidence addresses this exact counterexample within the same law?"
+    ]
+  },
+  "commit": {
+    "sequence": 4,
+    "receipt_sha256": "94f19d1a285911ba17a14edde5f09a7f43a78b52f01d2fe4c6393c6bef698b30",
+    "effect_count": 1,
+    "new_effect": true,
+    "durable": true,
+    "readback_verified": true
+  },
+  "gcl_restart_after_durable_commit": true,
+  "next_cycle": 5
+}

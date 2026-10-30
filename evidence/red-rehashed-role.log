@@ -1,0 +1,22 @@
+   Compiling ess-mai-poc011-authority-evidence-continuity v0.1.0 (C:\Users\AG\Desktop\ess-mai-project\publication\poc011-authority-evidence-continuity)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 5.68s
+     Running unittests src\lib.rs (C:\Users\AG\Desktop\ess-mai-project\_audit_build_cache\poc011\debug\deps\poc011-aac04d7149ebfd6f.exe)
+
+running 1 test
+test storage::tests::rebuilt_hash_chain_cannot_transfer_a_witness_role ... FAILED
+
+failures:
+
+---- storage::tests::rebuilt_hash_chain_cannot_transfer_a_witness_role stdout ----
+
+thread 'storage::tests::rebuilt_hash_chain_cannot_transfer_a_witness_role' (660) panicked at src\storage.rs:543:13:
+assertion failed: decode(&reframe(&record)).is_err()
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    storage::tests::rebuilt_hash_chain_cannot_transfer_a_witness_role
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 32 filtered out; finished in 0.02s
+
+error: test failed, to rerun pass `--lib`

@@ -1,0 +1,8 @@
+{
+  "os": "Windows-10-10.0.19045-SP0",
+  "machine": "AMD64",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "cargo": "cargo 1.98.0 (797e8a9bc 2026-08-05)",
+  "cwd": "C:\\Users\\AG\\Desktop\\ess-mai-project\\publication\\poc011-authority-evidence-continuity",
+  "target": "C:\\Users\\AG\\Desktop\\ess-mai-project\\_audit_build_cache\\poc011"
+}

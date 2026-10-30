@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If this bounded experiment is useful, cite this version and identify the exact artifact hash."
+type: software
+title: "ESS-MAI POC011: Authority, Evidence and Durable Continuity"
+version: 0.1.0
+doi: 10.5281/zenodo.23809527
+repository-code: "https://github.com/gjatalegacy-create/ESS-MAI-POC011-Authority-Evidence-Continuity"
+url: "https://doi.org/10.5281/zenodo.23809527"
+date-released: 2026-10-30
+license: Apache-2.0
+authors:
+  - family-names: Gjata
+    given-names: Bledar
+    orcid: "https://orcid.org/0009-0003-7854-266X"
+abstract: "A bounded Rust materialization of Bledar Gjata's proposed ESS-MAI AI Authority paradigm: independent executive competence under law within jurisdiction, demonstrated through scoped coordination, deterministic candidate elimination, current-evidence verification and durable five-cycle continuity. It does not certify the full architecture, general novelty or an external integration."
+keywords:
+  - ESS-MAI
+  - authority
+  - governance-first
+  - evidence
+  - deterministic-computation
+  - Rust
+  - reproducibility

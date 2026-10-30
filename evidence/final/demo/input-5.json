@@ -1,0 +1,69 @@
+{
+  "cycle": 5,
+  "context": "Bounded affine compute admission: a five-turn conversation",
+  "scope": "poc011/affine-admission",
+  "action_id": "model-B",
+  "question": "Evaluate fresh evidence for a stronger candidate; prior success is not permission.",
+  "law": {
+    "jurisdiction": "poc011/affine-admission",
+    "risk_limit": 10,
+    "byte_budget": 4096,
+    "time_budget_ns": 1000000000
+  },
+  "candidates": [
+    {
+      "id": "stronger-safe",
+      "a": 2,
+      "b": 2,
+      "samples": [
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 6
+        },
+        {
+          "x": 3,
+          "y": 8
+        },
+        {
+          "x": 4,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "id": "challenger",
+      "a": 4,
+      "b": 1,
+      "samples": [
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 9
+        },
+        {
+          "x": 3,
+          "y": 13
+        },
+        {
+          "x": 4,
+          "y": 17
+        }
+      ]
+    }
+  ]
+}

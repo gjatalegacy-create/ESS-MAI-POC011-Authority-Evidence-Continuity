@@ -1,0 +1,80 @@
+{
+  "schema": "POC011/source-extraction/1",
+  "ffi": {
+    "source": "C:\\Users\\AG\\Desktop\\ess-mai-project\\v1.8.9_ess_mai_phase_015-ws\\v1.8.9_ess_mai_phase_015\\ess_mai\\light\\src\\sovereign\\lgc_gate.rs",
+    "source_sha256": "c65d57306dfb9e5f8f4b95dabeb8641a13912f75357b5e504fdd8c6c08493ba4",
+    "line_ranges_inclusive": [
+      [
+        14,
+        15
+      ],
+      [
+        23,
+        29
+      ],
+      [
+        35,
+        36
+      ],
+      [
+        38,
+        41
+      ],
+      [
+        75,
+        95
+      ],
+      [
+        104,
+        109
+      ],
+      [
+        116,
+        164
+      ]
+    ],
+    "extracted_path": "src/source_ffi.rs",
+    "extracted_sha256": "91396d6e1c92ad43d0224e3605ba0e28175c048d0b9a5701bb0a7d4878ffd4bd",
+    "extraction": "Exact UTF-8 byte ranges concatenated in original order; original line endings retained. Omitted unrelated LgcGate and unused SealMismatch variant.",
+    "wrapper": "src/ffi.rs",
+    "wrapper_changes": [
+      "private source module and private native token boundary",
+      "1024 lifetime action cap, 4096 byte nonempty binding cap",
+      "exact binding byte equality checked before native CAS consumption",
+      "unique checked process-local gate nonce preventing cross-gate replay",
+      "internal test-only C ABI adapter; no exported authority issuer"
+    ],
+    "limits": [
+      "The original native generation counter is protected by the wrapper capacity bound.",
+      "The nonce is not a secret and is not an authenticity proof.",
+      "Replay protection is process-local; no across-restart claim.",
+      "The Rust ownership/token boundary does not protect a process with arbitrary unsafe memory corruption.",
+      "The internal C ABI test is not a separately compiled C translation unit."
+    ],
+    "wrapper_sha256": "a40bbbabe48057accaf7a872b13680e96846c1b9df63b53d90593cb87bb76a1e"
+  },
+  "zero_noi": {
+    "source": "C:\\Users\\AG\\Desktop\\aig-c\\codex_zvn\\runtime\\zero-noi\\src\\lib.rs",
+    "source_sha256": "db6ba97d1c8c95d642f261a423336c4510212abe2f162ce1fe4db5f471619cd9",
+    "extracted_path": "src/zero_noi.rs",
+    "extracted_sha256": "db6ba97d1c8c95d642f261a423336c4510212abe2f162ce1fe4db5f471619cd9",
+    "extraction": "Exact whole-file byte copy; includes existing primitive tests.",
+    "origin": "Later AIGovern-Cyber materialization; not original v1.8.9 code.",
+    "semantics": "Neutral borrowed trigger only; no evidence, authority, verdict or persistence. Caller owns execution and checks."
+  },
+  "checks": {
+    "ffi": {
+      "command": "rustc --edition=2021 --deny warnings --test src/ffi.rs -o %TEMP%/poc011-ffi-boundary-tests.exe; run executable",
+      "passed": 8,
+      "failed": 0,
+      "ignored": 0
+    },
+    "zero_noi": {
+      "command": "rustc --edition=2021 --deny warnings --test src/zero_noi.rs -o %TEMP%/poc011-zero-noi-tests.exe; run executable",
+      "passed": 2,
+      "failed": 0,
+      "ignored": 0
+    },
+    "note": "Standalone compiler checks before parent Cargo integration. rustup launcher emitted could not canonicalize path C:/Users/AG; compilation exited 0 under deny warnings."
+  }
+}

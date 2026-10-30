@@ -1,0 +1,7 @@
+warn: could not canonicalize path C:\Users\AG
+   Compiling ess-mai-poc011-authority-evidence-continuity v0.1.0 (C:\Users\AG\Desktop\ess-mai-project\publication\poc011-authority-evidence-continuity)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 7.62s
+     Running unittests src\lib.rs (C:\Users\AG\Desktop\ess-mai-project\_audit_build_cache\poc011\debug\deps\poc011-aac04d7149ebfd6f.exe)
+     Running unittests src\main.rs (C:\Users\AG\Desktop\ess-mai-project\_audit_build_cache\poc011\debug\deps\poc011-090f54f1614d96f2.exe)
+     Running tests\process_continuity.rs (C:\Users\AG\Desktop\ess-mai-project\_audit_build_cache\poc011\debug\deps\process_continuity-1ebb65209134b9ed.exe)
+   Doc-tests poc011

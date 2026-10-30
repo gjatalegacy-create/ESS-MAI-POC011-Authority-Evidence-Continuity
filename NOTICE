@@ -1,0 +1,20 @@
+ESS-MAI POC011 — Authority, Evidence and Durable Continuity
+Copyright 2026 Bledar Gjata / Gjata Legacy
+
+This capsule contains selected source from ESS-MAI and a later AIGovern-Cyber
+materialization, together with new bounded adaptations. The original source
+origins, exact extraction ranges and SHA-256 hashes are recorded in
+SOURCE_MAP.md and provenance/ffi_zero_noi.json.
+
+src/source_ffi.rs contains selected ESS-MAI Light single-use gate source.
+src/zero_noi.rs contains the later neutral 0-NOI primitive.
+The source authorship and attribution are retained here.
+
+The included capsule materials are distributed under the Apache License,
+Version 2.0; see LICENSE. This notice does not publish or relicense excluded
+private code or the entirety of AIGovern-Cyber. Third-party dependencies retain
+their own licenses and are identified by Cargo.toml and Cargo.lock.
+
+The capsule is a bounded research experiment. It does not represent an
+independent security certification, a third-party endorsement, or completed
+integration with another project.

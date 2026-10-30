@@ -1,0 +1,42 @@
+{
+  "cycle": 3,
+  "context": "Bounded affine compute admission: a five-turn conversation",
+  "scope": "poc011/affine-admission",
+  "action_id": "model-A",
+  "question": "Here is a complete model table; test its safety bound.",
+  "law": {
+    "jurisdiction": "poc011/affine-admission",
+    "risk_limit": 10,
+    "byte_budget": 4096,
+    "time_budget_ns": 1000000000
+  },
+  "candidates": [
+    {
+      "id": "over-budget-model",
+      "a": 4,
+      "b": 1,
+      "samples": [
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 9
+        },
+        {
+          "x": 3,
+          "y": 13
+        },
+        {
+          "x": 4,
+          "y": 17
+        }
+      ]
+    }
+  ]
+}

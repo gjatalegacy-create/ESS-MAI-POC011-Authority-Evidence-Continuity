@@ -1,0 +1,21 @@
+{
+  "cycle": 2,
+  "context": "Bounded affine compute admission: a five-turn conversation",
+  "scope": "poc011/affine-admission",
+  "action_id": "model-A",
+  "question": "The risk limit is 10; what evidence is still missing?",
+  "law": {
+    "jurisdiction": "poc011/affine-admission",
+    "risk_limit": 10,
+    "byte_budget": 4096,
+    "time_budget_ns": 1000000000
+  },
+  "candidates": [
+    {
+      "id": "safe",
+      "a": 2,
+      "b": 1,
+      "samples": []
+    }
+  ]
+}

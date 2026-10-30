@@ -1,0 +1,35 @@
+POC011: a bounded technical baseline for discussion
+
+Takeshi,
+
+Thank you for the time and technical attention you have given to this discussion. I would like to make the next exchange concrete and reproducible with a small experiment, rather than ask you to accept broad claims about an architecture.
+
+The architectural idea I am proposing through ESS-MAI is the AI Authority paradigm. By authority I mean an independent executive competence, with a defined duty, governing law and jurisdiction within a constitutional hierarchy. An authority performs the work it owns: coordinating, reasoning or verifying. Permitting or stopping an action follows from the applicable law; a permission bit alone does not describe this paradigm. GCL provides the constitutional order through the laws and principal authorities, while each authority exercises its own competence within its boundaries. ESS-MAI's intended internal organisation comprises GCL, Supreme, laws and hierarchical authorities. An external objective-seeking agent would be a separate participant in a future integration, not a component silently substituted for an ESS-MAI authority.
+
+POC011 separates coordination, reasoning and current-evidence verification. LIGHT binds a request and its context. QUANTUM eliminates candidates using an explicit finite model and hard constraints. SHADOW recomputes the current case, checks the trace and applies mandatory gates before a local effect can be committed. The result is one scalar admission bit, 0 or 1. It is not the full ESS-MAI or AIGovern-Cyber runtime and does not claim an integration with VERITAS or your work.
+
+This is a bounded materialization of that proposed paradigm. SHADOW's recomputation belongs to its verification competence; it does not acquire QUANTUM's authority to propose the action. The tests establish specific executable properties, not the general novelty of the paradigm. My aim is to develop a dependable governing core and useful integration components through evidence and criticism. Your system's identity, boundaries and ownership would remain explicit in any joint experiment.
+
+The five-cycle example distinguishes an incomplete law, missing evidence, a concrete counterexample and corrected evidence. Earlier gaps and counterexamples remain in memory. An earlier success cannot authorize the next action. The current output and its follow-up questions are released only after the local journal commit and readback have completed.
+
+The single-use FFI mechanism is an exact small extraction from ESS-MAI's Light source, surrounded by a bounded wrapper. Copying its handle does not create another successful consumption of the private slot. That slot protects one particular action's admission; the handle does not define or transfer the authority's independent competence. This is process-local protection, not a claim that all information is zero-copy or that arbitrary host compromise is prevented. The included ABI probe is internal; it is not a separately compiled external C client. A real external interface would need an agreed ownership, lifetime and threat-model contract.
+
+D-BAB records preconditions and outcomes without deciding another role's result. The 0-NOI primitive is a later materialization, identified separately in the provenance, and provides a neutral trigger rather than permission. SHA-256 binds the evidence and trace; it is not presented as authentication or proof of scientific truth. The model itself is only y=a*x+b on five integer points. These limits are intentional and documented.
+
+If this is a useful basis for discussion, I suggest agreeing on two things first:
+
+1. One minimal interface: the input and scope, required evidence, the proposed action, the verification result and the durable receipt. We can discuss which side owns each check without transferring or assuming the other's authority.
+
+2. One adversarial scenario with a precise expected refusal. Examples include changing the scope after coordination, changing a computed result while rebuilding its checksum, copying a one-use handle, omitting a required sample, or interrupting the journal write before acknowledgement.
+
+A passing test would support only the particular property and environment exercised. A failing test would be valuable evidence: we would retain the counterexample, mark the affected claim unsupported or invalid within its stated scope, and examine the correction openly. We would not describe an unperformed integration as complete or ask you to certify the wider architecture.
+
+This note requests neither ownership of your source nor disclosure of private implementation details. A public minimal interface, a reproducible objection or a bounded counterexample would already be a useful contribution. Contributions should be attributed to their contributors, and you are equally welcome to disagree with the premise or propose a better experiment.
+
+The execution evidence and reproduction commands are in RESULTS.md and README.md. This is a proposed technical discussion accompanying POC011, not a statement of agreement, endorsement or completed collaboration by its addressee.
+
+With respect,
+Bledar Gjata
+Gjata Legacy
+ORCID: https://orcid.org/0009-0003-7854-266X
+ESS-MAI: https://github.com/gjatalegacy-create/ESS-MAI

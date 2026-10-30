@@ -1,0 +1,25 @@
+   Compiling ess-mai-poc011-authority-evidence-continuity v0.1.0 (C:\Users\AG\Desktop\ess-mai-project\publication\poc011-authority-evidence-continuity)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 5.71s
+     Running unittests src\lib.rs (C:\Users\AG\Desktop\ess-mai-project\_audit_build_cache\poc011\debug\deps\poc011-aac04d7149ebfd6f.exe)
+
+running 1 test
+test authority::tests::corrupt_hardware_receipt_loses_seal_and_produces_question ... FAILED
+
+failures:
+
+---- authority::tests::corrupt_hardware_receipt_loses_seal_and_produces_question stdout ----
+
+thread 'authority::tests::corrupt_hardware_receipt_loses_seal_and_produces_question' (43372) panicked at src\authority.rs:449:38:
+assertion `left == right` failed
+  left: "CandidateReady"
+ right: "FailClosedIntegrity"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    authority::tests::corrupt_hardware_receipt_loses_seal_and_produces_question
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 31 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `--lib`
+exit_code=101

@@ -1,0 +1,494 @@
+{
+  "report": {
+    "input": {
+      "cycle": 5,
+      "context": "Bounded affine compute admission: a five-turn conversation",
+      "scope": "poc011/affine-admission",
+      "action_id": "model-B",
+      "question": "Evaluate fresh evidence for a stronger candidate; prior success is not permission.",
+      "law": {
+        "jurisdiction": "poc011/affine-admission",
+        "risk_limit": 10,
+        "byte_budget": 4096,
+        "time_budget_ns": 1000000000
+      },
+      "candidates": [
+        {
+          "id": "stronger-safe",
+          "a": 2,
+          "b": 2,
+          "samples": [
+            {
+              "x": 0,
+              "y": 2
+            },
+            {
+              "x": 1,
+              "y": 4
+            },
+            {
+              "x": 2,
+              "y": 6
+            },
+            {
+              "x": 3,
+              "y": 8
+            },
+            {
+              "x": 4,
+              "y": 10
+            }
+          ]
+        },
+        {
+          "id": "challenger",
+          "a": 4,
+          "b": 1,
+          "samples": [
+            {
+              "x": 0,
+              "y": 1
+            },
+            {
+              "x": 1,
+              "y": 5
+            },
+            {
+              "x": 2,
+              "y": 9
+            },
+            {
+              "x": 3,
+              "y": 13
+            },
+            {
+              "x": 4,
+              "y": 17
+            }
+          ]
+        }
+      ]
+    },
+    "status": "VerifiedAction",
+    "verification": 1,
+    "selected_candidate_sha256": "a5a133771afb8f0f02e8cf381d87982afbb95814b3c9a3af01aa57e858861d25",
+    "assessments": [
+      {
+        "candidate_id": "stronger-safe",
+        "candidate_sha256": "a5a133771afb8f0f02e8cf381d87982afbb95814b3c9a3af01aa57e858861d25",
+        "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+        "status": "Eligible",
+        "missing_x": [],
+        "counterexamples": [],
+        "values": [
+          2,
+          4,
+          6,
+          8,
+          10
+        ],
+        "risk": 10,
+        "gain": 30
+      },
+      {
+        "candidate_id": "challenger",
+        "candidate_sha256": "723c00810be5dea1bccb29f100d693c26afbfd6880462ba645240cf754b2b90e",
+        "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+        "status": "EliminatedCounterproof",
+        "missing_x": [],
+        "counterexamples": [
+          "candidate challenger: x=3, |y|=13 > risk_limit=10",
+          "candidate challenger: x=4, |y|=17 > risk_limit=10"
+        ],
+        "values": [
+          1,
+          5,
+          9,
+          13,
+          17
+        ],
+        "risk": 17,
+        "gain": 45
+      }
+    ],
+    "hardware": {
+      "actual_bytes": 40,
+      "byte_budget": 4096,
+      "elapsed_ns": 3600,
+      "payload_sha256": "26aca49ddcf32c9cd189d79b3bf1c3099825c220cb467ef23e6a0b2a3ec4189b",
+      "physical_energy_joules": null,
+      "requested_bytes": 40,
+      "time_budget_ns": 1000000000,
+      "verified_readback": true
+    },
+    "gates": [
+      {
+        "name": "Spine.scope",
+        "passed": true
+      },
+      {
+        "name": "Spine.law_complete",
+        "passed": true
+      },
+      {
+        "name": "Spine.lgc_exact",
+        "passed": true
+      },
+      {
+        "name": "Spine.current_evidence",
+        "passed": true
+      },
+      {
+        "name": "Spine.authority_order",
+        "passed": true
+      },
+      {
+        "name": "Spine.hardware_readback",
+        "passed": true
+      },
+      {
+        "name": "Spine.quantum_completion",
+        "passed": true
+      },
+      {
+        "name": "Matrix.current_dossier",
+        "passed": true
+      },
+      {
+        "name": "Judiciary.single_use_local_ffi",
+        "passed": true
+      }
+    ],
+    "seal_500": "141b5e0f5bfaeea19cea7b1aa33bb786276bc81d5df0fe383e730d5dd2ab2c2a",
+    "lgc": {
+      "input_sha256": "6d5fe4bab0ebe620d639e692090a742e7c416d6fbe5ebddd9029cbc4d9da4f21",
+      "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+      "previous_cycle_sha256": "0a874c2e3ec9bd23236557093f44b64d4a459b6459a0af7f758af63301ca8954",
+      "steps": [
+        {
+          "sequence": 0,
+          "role": "D-BAB",
+          "operation": "preconditions",
+          "payload": {
+            "evidence": {
+              "input_sha256": "6d5fe4bab0ebe620d639e692090a742e7c416d6fbe5ebddd9029cbc4d9da4f21",
+              "law_gaps": []
+            },
+            "owner": "LIGHT"
+          },
+          "previous_sha256": "708abfeae72273947a13678fe6e0198ec9549fa37c9913f1f402998d79dea6ca",
+          "sha256": "cbd701df19b0547cb66e46656f222a46c6e1531ff87ba16efe1536c51711d2a1"
+        },
+        {
+          "sequence": 1,
+          "role": "0-NOI",
+          "operation": "trigger",
+          "payload": {
+            "input_sha256": "6d5fe4bab0ebe620d639e692090a742e7c416d6fbe5ebddd9029cbc4d9da4f21",
+            "owner": "LIGHT",
+            "vector": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "previous_sha256": "cbd701df19b0547cb66e46656f222a46c6e1531ff87ba16efe1536c51711d2a1",
+          "sha256": "cb4cf1be66fc77eebfd8b253d877dbd2e1804ed5802c7f43d9093926bbc1c4e2"
+        },
+        {
+          "sequence": 2,
+          "role": "LIGHT",
+          "operation": "coordinate",
+          "payload": {
+            "candidate_hashes": [
+              "a5a133771afb8f0f02e8cf381d87982afbb95814b3c9a3af01aa57e858861d25",
+              "723c00810be5dea1bccb29f100d693c26afbfd6880462ba645240cf754b2b90e"
+            ],
+            "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+            "input_sha256": "6d5fe4bab0ebe620d639e692090a742e7c416d6fbe5ebddd9029cbc4d9da4f21",
+            "memory_refs": [
+              {
+                "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+                "cycle": 1,
+                "negative_candidate_sha256": [],
+                "positive_candidate_sha256": [],
+                "question_count": 1,
+                "receipt_sha256": "81735f286406a575a5dae13cf8e584db9d0ebd6a0a76bc82dc19bf7c956eb28f"
+              },
+              {
+                "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+                "cycle": 2,
+                "negative_candidate_sha256": [],
+                "positive_candidate_sha256": [],
+                "question_count": 1,
+                "receipt_sha256": "464a6c2e5afeeadb4184bbb58f7877e65e9f21ab1d29bd18e5333876b12970eb"
+              },
+              {
+                "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+                "cycle": 3,
+                "negative_candidate_sha256": [
+                  "773af67916a35ece330cce63eb2322978d52093be92f8a8a79a1b1cca10213ef"
+                ],
+                "positive_candidate_sha256": [],
+                "question_count": 2,
+                "receipt_sha256": "082ab00816c15e439724c6fb3222aadeb4870016e84992be326572f6fdc88d34"
+              },
+              {
+                "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+                "cycle": 4,
+                "negative_candidate_sha256": [
+                  "773af67916a35ece330cce63eb2322978d52093be92f8a8a79a1b1cca10213ef"
+                ],
+                "positive_candidate_sha256": [
+                  "ff4fec782f13402eb9c6254aa7073225f31071b96a892601c18457f0cd9a6d3a"
+                ],
+                "question_count": 2,
+                "receipt_sha256": "0a874c2e3ec9bd23236557093f44b64d4a459b6459a0af7f758af63301ca8954"
+              }
+            ],
+            "previous_cycle_sha256": "0a874c2e3ec9bd23236557093f44b64d4a459b6459a0af7f758af63301ca8954"
+          },
+          "previous_sha256": "cb4cf1be66fc77eebfd8b253d877dbd2e1804ed5802c7f43d9093926bbc1c4e2",
+          "sha256": "cef5b412b4227ebb08301c4034e6d4e1fd29715f7bb92bdcfe230faa1f00e1bb"
+        },
+        {
+          "sequence": 3,
+          "role": "D-BAB",
+          "operation": "preconditions",
+          "payload": {
+            "evidence": {
+              "coordination_sha256": "2b10f11bb89bdf0367d42038476cbe3afd14c8055fa99811c0e1a28c1ed7c577",
+              "law_gaps": []
+            },
+            "owner": "QUANTUM"
+          },
+          "previous_sha256": "cef5b412b4227ebb08301c4034e6d4e1fd29715f7bb92bdcfe230faa1f00e1bb",
+          "sha256": "28b351d4194cb291ed3e1eeab85974c6c7576cf1b97805ca202bef6153a847b5"
+        },
+        {
+          "sequence": 4,
+          "role": "0-NOI",
+          "operation": "trigger",
+          "payload": {
+            "input_sha256": "6d5fe4bab0ebe620d639e692090a742e7c416d6fbe5ebddd9029cbc4d9da4f21",
+            "owner": "QUANTUM",
+            "vector": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "previous_sha256": "28b351d4194cb291ed3e1eeab85974c6c7576cf1b97805ca202bef6153a847b5",
+          "sha256": "43cf8cbb09870659112407c768ae4e8883a695807397db85d94194c9cd99183b"
+        },
+        {
+          "sequence": 5,
+          "role": "QUANTUM",
+          "operation": "eliminate",
+          "payload": {
+            "assessments": [
+              {
+                "candidate_id": "stronger-safe",
+                "candidate_sha256": "a5a133771afb8f0f02e8cf381d87982afbb95814b3c9a3af01aa57e858861d25",
+                "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+                "counterexamples": [],
+                "gain": 30,
+                "missing_x": [],
+                "risk": 10,
+                "status": "Eligible",
+                "values": [
+                  2,
+                  4,
+                  6,
+                  8,
+                  10
+                ]
+              },
+              {
+                "candidate_id": "challenger",
+                "candidate_sha256": "723c00810be5dea1bccb29f100d693c26afbfd6880462ba645240cf754b2b90e",
+                "context_sha256": "db91ef6b43615e163745d449f12f12754f66c745fe241705435172542b330e2f",
+                "counterexamples": [
+                  "candidate challenger: x=3, |y|=13 > risk_limit=10",
+                  "candidate challenger: x=4, |y|=17 > risk_limit=10"
+                ],
+                "gain": 45,
+                "missing_x": [],
+                "risk": 17,
+                "status": "EliminatedCounterproof",
+                "values": [
+                  1,
+                  5,
+                  9,
+                  13,
+                  17
+                ]
+              }
+            ],
+            "hardware": {
+              "actual_bytes": 40,
+              "byte_budget": 4096,
+              "elapsed_ns": 3600,
+              "payload_sha256": "26aca49ddcf32c9cd189d79b3bf1c3099825c220cb467ef23e6a0b2a3ec4189b",
+              "physical_energy_joules": null,
+              "requested_bytes": 40,
+              "time_budget_ns": 1000000000,
+              "verified_readback": true
+            },
+            "hardware_failure": null,
+            "selected": "a5a133771afb8f0f02e8cf381d87982afbb95814b3c9a3af01aa57e858861d25",
+            "status": "CandidateReady"
+          },
+          "previous_sha256": "43cf8cbb09870659112407c768ae4e8883a695807397db85d94194c9cd99183b",
+          "sha256": "d1ffa6d9431acff364fc17545800bbefc0f9f8cfc295d6fc842a157c8d380ef6"
+        },
+        {
+          "sequence": 6,
+          "role": "D-BAB",
+          "operation": "outcome",
+          "payload": {
+            "evidence": {
+              "assessment_sha256": "d5cc45f402a8042b7f0dc8eff1eb07f15c939f6528f24eb54bd4dfc0e1872797",
+              "hardware_failure": null,
+              "status": "CandidateReady"
+            },
+            "owner": "QUANTUM"
+          },
+          "previous_sha256": "d1ffa6d9431acff364fc17545800bbefc0f9f8cfc295d6fc842a157c8d380ef6",
+          "sha256": "e5484690d501602199b823d91d564bbc9a8207995ea2c099dbcafb428dd6f9cf"
+        },
+        {
+          "sequence": 7,
+          "role": "D-BAB",
+          "operation": "preconditions",
+          "payload": {
+            "evidence": {
+              "received_tip": "e5484690d501602199b823d91d564bbc9a8207995ea2c099dbcafb428dd6f9cf"
+            },
+            "owner": "SHADOW"
+          },
+          "previous_sha256": "e5484690d501602199b823d91d564bbc9a8207995ea2c099dbcafb428dd6f9cf",
+          "sha256": "db41c1107a696f76a0f1553c45fa6f7d71c006b96dc6c3ac22da10e37c4ad88c"
+        },
+        {
+          "sequence": 8,
+          "role": "0-NOI",
+          "operation": "trigger",
+          "payload": {
+            "input_sha256": "6d5fe4bab0ebe620d639e692090a742e7c416d6fbe5ebddd9029cbc4d9da4f21",
+            "owner": "SHADOW",
+            "vector": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "previous_sha256": "db41c1107a696f76a0f1553c45fa6f7d71c006b96dc6c3ac22da10e37c4ad88c",
+          "sha256": "963fd694f0164457e65c93d1c30bc7c6e989a6348a4dabbb634939a978bf73d3"
+        },
+        {
+          "sequence": 9,
+          "role": "SHADOW",
+          "operation": "spine",
+          "payload": {
+            "conjunction": true,
+            "gates": [
+              {
+                "name": "Spine.scope",
+                "passed": true
+              },
+              {
+                "name": "Spine.law_complete",
+                "passed": true
+              },
+              {
+                "name": "Spine.lgc_exact",
+                "passed": true
+              },
+              {
+                "name": "Spine.current_evidence",
+                "passed": true
+              },
+              {
+                "name": "Spine.authority_order",
+                "passed": true
+              },
+              {
+                "name": "Spine.hardware_readback",
+                "passed": true
+              },
+              {
+                "name": "Spine.quantum_completion",
+                "passed": true
+              }
+            ]
+          },
+          "previous_sha256": "963fd694f0164457e65c93d1c30bc7c6e989a6348a4dabbb634939a978bf73d3",
+          "sha256": "48167eb48de139c7b965cf54ab5930503a4fe8b4c197005a4525c1cb2463ef1e"
+        },
+        {
+          "sequence": 10,
+          "role": "SHADOW",
+          "operation": "matrix",
+          "payload": {
+            "negative_evidence_retained": 1,
+            "passed": true,
+            "selected": "a5a133771afb8f0f02e8cf381d87982afbb95814b3c9a3af01aa57e858861d25"
+          },
+          "previous_sha256": "48167eb48de139c7b965cf54ab5930503a4fe8b4c197005a4525c1cb2463ef1e",
+          "sha256": "444718cc63e9bc8a7d8daebb13b5840316bf302269147787caf46fd2e6f40777"
+        },
+        {
+          "sequence": 11,
+          "role": "SHADOW",
+          "operation": "judiciary",
+          "payload": {
+            "all_required": true,
+            "ffi_consumed": true,
+            "verification": 1
+          },
+          "previous_sha256": "444718cc63e9bc8a7d8daebb13b5840316bf302269147787caf46fd2e6f40777",
+          "sha256": "40104d47985aa16000bbca86ad518f4492c6f7171f9f51141979fd1b6d2dce7a"
+        },
+        {
+          "sequence": 12,
+          "role": "D-BAB",
+          "operation": "outcome",
+          "payload": {
+            "evidence": {
+              "status": "VerifiedAction",
+              "verification": 1
+            },
+            "owner": "SHADOW"
+          },
+          "previous_sha256": "40104d47985aa16000bbca86ad518f4492c6f7171f9f51141979fd1b6d2dce7a",
+          "sha256": "719da2f6b6d504c6a7f10fa0a47367d0c9d0f3723f95287491346408cd7b9c0d"
+        }
+      ]
+    },
+    "output": "Verified bounded action: a5a133771afb8f0f02e8cf381d87982afbb95814b3c9a3af01aa57e858861d25. Scope: poc011/affine-admission. No claim beyond the finite model.",
+    "questions": [
+      "candidate challenger: x=3, |y|=13 > risk_limit=10. What corrected candidate or evidence addresses this exact counterexample within the same law?",
+      "candidate challenger: x=4, |y|=17 > risk_limit=10. What corrected candidate or evidence addresses this exact counterexample within the same law?"
+    ]
+  },
+  "commit": {
+    "sequence": 5,
+    "receipt_sha256": "cc8f2ad63244909e84c1ae2068a8e6c6bb8c50284f959ff31a29e6d168f93a3b",
+    "effect_count": 2,
+    "new_effect": true,
+    "durable": true,
+    "readback_verified": true
+  },
+  "gcl_restart_after_durable_commit": true,
+  "next_cycle": 6
+}

@@ -1,0 +1,89 @@
+[
+  {
+    "name": "toolchain",
+    "argv": [
+      "C:\\Users\\AG\\.cargo\\bin\\cargo.EXE",
+      "--version"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 0.06300000008195639
+  },
+  {
+    "name": "format",
+    "argv": [
+      "C:\\Users\\AG\\.cargo\\bin\\cargo.EXE",
+      "fmt",
+      "--all",
+      "--",
+      "--check"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 0.3440000000409782
+  },
+  {
+    "name": "test-debug",
+    "argv": [
+      "C:\\Users\\AG\\.cargo\\bin\\cargo.EXE",
+      "test",
+      "--locked",
+      "--offline"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 11.984000000171363
+  },
+  {
+    "name": "test-release",
+    "argv": [
+      "C:\\Users\\AG\\.cargo\\bin\\cargo.EXE",
+      "test",
+      "--locked",
+      "--offline",
+      "--release"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 24.07799999974668
+  },
+  {
+    "name": "build-release",
+    "argv": [
+      "C:\\Users\\AG\\.cargo\\bin\\cargo.EXE",
+      "build",
+      "--locked",
+      "--offline",
+      "--release"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 0.3130000000819564
+  },
+  {
+    "name": "five-cycles",
+    "argv": [
+      "C:\\Users\\AG\\Desktop\\ess-mai-project\\_audit_build_cache\\poc011\\release\\poc011.exe",
+      "demo",
+      "C:\\Users\\AG\\Desktop\\ess-mai-project\\publication\\poc011-authority-evidence-continuity\\evidence\\final\\demo"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 0.09299999987706542
+  },
+  {
+    "name": "inspect",
+    "argv": [
+      "C:\\Users\\AG\\Desktop\\ess-mai-project\\_audit_build_cache\\poc011\\release\\poc011.exe",
+      "inspect",
+      "C:\\Users\\AG\\Desktop\\ess-mai-project\\publication\\poc011-authority-evidence-continuity\\evidence\\final\\demo\\memory.wal"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 0.03200000012293458
+  },
+  {
+    "name": "independent-verifier",
+    "argv": [
+      "C:\\Users\\AG\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "C:\\Users\\AG\\Desktop\\ess-mai-project\\publication\\poc011-authority-evidence-continuity\\tools\\verify.py",
+      "C:\\Users\\AG\\Desktop\\ess-mai-project\\publication\\poc011-authority-evidence-continuity\\evidence\\final\\demo",
+      "--self-test"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 0.4690000000409782
+  }
+]

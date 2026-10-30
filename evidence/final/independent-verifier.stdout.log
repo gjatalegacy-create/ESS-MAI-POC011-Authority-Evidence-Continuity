@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "verifier": "Python stdlib independent bounded-model verification",
+  "native_paired_verdict_claim": false,
+  "limitations": "Checks bytes, model mathematics and reported observations; does not authenticate a hostile host, remeasure timing, or prove FFI consumption from logs alone.",
+  "evidence": {
+    "cycles": 5,
+    "verification_bits": [
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    "unique_effects": 2,
+    "head_sha256": "cc8f2ad63244909e84c1ae2068a8e6c6bb8c50284f959ff31a29e6d168f93a3b"
+  },
+  "provenance": {
+    "checked": [
+      "ffi extraction",
+      "ffi wrapper",
+      "ffi original source",
+      "ffi exact source bytes",
+      "zero_noi extraction",
+      "zero_noi original source",
+      "zero_noi exact source bytes",
+      "ESS-MAI v1.8.9 phase 015 hardware source",
+      "ESS-MAI v1.8.9 phase 015 hardware block",
+      "AIGovern-Cyber bounded runtime derivative hardware source",
+      "AIGovern-Cyber bounded runtime derivative hardware block",
+      "C_GCL",
+      "C_PHASE",
+      "C_LIGHT",
+      "C_QUANTUM",
+      "C_PD_LIGHT",
+      "C_SPINE_ORDER",
+      "C_SPINE",
+      "C_PIPELINE",
+      "C_MATRIX",
+      "A_MATRIX",
+      "A_NBES",
+      "A_DBAB_WITNESS",
+      "A_DBAB_NOT_REUSED",
+      "A_NOI_PRIMITIVE",
+      "A_NOI_CALLER",
+      "A_NOI_LATER",
+      "A_PD",
+      "A_PD_STORE",
+      "A_IZ_ORDER",
+      "A_CAUSES",
+      "A_PAIR_BOUNDARY",
+      "A_HW_RECEIPT",
+      "A_HW_HOLD",
+      "A_RESET"
+    ],
+    "unavailable_original_sources": []
+  },
+  "self_tests_passed": 17
+}

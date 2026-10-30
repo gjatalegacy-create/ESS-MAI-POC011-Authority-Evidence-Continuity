@@ -1,0 +1,30 @@
+[package]
+name = "ess-mai-poc011-authority-evidence-continuity"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.89"
+license = "Apache-2.0"
+authors = ["Bledar Gjata / Gjata Legacy"]
+description = "Bounded five-cycle authority, evidence and durable continuity experiment"
+publish = false
+
+[workspace]
+
+[lib]
+name = "poc011"
+path = "src/lib.rs"
+
+[[bin]]
+name = "poc011"
+path = "src/main.rs"
+
+[dependencies]
+serde = { version = "=1.0.228", features = ["derive"] }
+serde_json = "=1.0.150"
+sha2 = "=0.10.9"
+
+[profile.release]
+overflow-checks = true
+
+[lints.rust]
+warnings = "deny"
