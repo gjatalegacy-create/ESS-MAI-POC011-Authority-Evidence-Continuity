@@ -18,9 +18,9 @@ jobs:
         with:
           persist-credentials: false
       - name: Prepare official Rust toolchain
-        run: rustup toolchain install stable --profile minimal --component rustfmt
+        run: rustup toolchain install 1.98.0 --profile minimal --component rustfmt
       - name: Select Rust toolchain
-        run: rustup default stable
+        run: rustup default 1.98.0
       - name: Fetch pinned dependencies
         run: cargo fetch --locked
       - name: Verify archived evidence and manifest

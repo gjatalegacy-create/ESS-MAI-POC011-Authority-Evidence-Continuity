@@ -63,7 +63,7 @@ The examples are deterministic mathematical fixtures. Their samples are supplied
 
 ## Reproduce locally
 
-Use Rust 1.89 or newer. `Cargo.lock` pins the dependencies. Offline commands require those pinned crates to exist in the local Cargo cache; they do not silently fetch dependencies.
+Use **Rust 1.98.0**, the exact toolchain of the recorded validation and the pinned hosted reproduction workflow. Rust 1.99.1 makes the existing `fetch_update` call a deprecation error under this package's unchanged `warnings = "deny"` policy; newer-toolchain compatibility is not claimed. See [the CI compatibility erratum](CI_STATUS.md). `Cargo.lock` pins the dependencies. Offline commands require those pinned crates to exist in the local Cargo cache; they do not silently fetch dependencies.
 
 Run from this directory:
 
