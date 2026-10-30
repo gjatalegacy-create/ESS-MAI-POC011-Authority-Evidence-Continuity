@@ -11,6 +11,8 @@ rustup toolchain install 1.98.0 --profile minimal --component rustfmt
 rustup override set 1.98.0
 ```
 
-Current hosted outcomes are visible in [the reproduction workflow](https://github.com/gjatalegacy-create/ESS-MAI-POC011-Authority-Evidence-Continuity/actions/workflows/reproduce.yml). A successful Pages deployment is not a successful test run. A hosted execution is additional reproducibility evidence, not independent peer review.
+Both hosted platforms **passed** the complete pinned-toolchain reproduction in [run 41077100247](https://github.com/gjatalegacy-create/ESS-MAI-POC011-Authority-Evidence-Continuity/actions/runs/41077100247), commit `6695a96c5f1833f92d891d1310560dbf1b0c6529`: Ubuntu in 36 seconds and Windows in 56 seconds. The workflow checked the manifest and recorded evidence, ran the same 38 Rust tests in debug and release, built the release binary, executed the five-cycle demonstration and ran the Python verifier. These job durations are not runtime benchmarks.
+
+Subsequent hosted outcomes are visible in [the reproduction workflow](https://github.com/gjatalegacy-create/ESS-MAI-POC011-Authority-Evidence-Continuity/actions/workflows/reproduce.yml). A successful Pages deployment is not a successful test run. A hosted execution is additional reproducibility evidence, not independent peer review.
 
 The `v0.1.0` tag, its original ZIP, its checksum and its historical CI failures remain unchanged. The current branch includes this maintenance documentation and the pinned workflow; it must not be described as byte-identical to the original release archive. `SHA256SUMS` covers the current branch's files, while the original release checksum continues to identify the frozen release. No newer-toolchain support or new release is asserted by this correction.
