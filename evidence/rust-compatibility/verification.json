@@ -1,0 +1,148 @@
+{
+  "scope": "POC011 maintained branch compiler compatibility, not the immutable v0.1.0 release",
+  "base_commit": "67e899a6054b1677caef2be9423c66e1bec4b9d6",
+  "red": {
+    "ExitCode": 101,
+    "Stage": "unchanged 67e899a",
+    "Toolchain": "Rust 1.99.1",
+    "Command": "cargo test --locked --offline --no-run"
+  },
+  "reproduce": "python tools/reproduce.py NEW_OUTPUT --target-dir TARGET",
+  "toolchains": [
+    {
+      "rust": "1.98.0",
+      "os": "Windows-10-10.0.19045-SP0",
+      "cargo": "cargo 1.98.0 (797e8a9bc 2026-08-05)",
+      "tests": {
+        "debug": 48,
+        "release": 48
+      },
+      "cycle_bits": [
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "result": {
+        "status": "passed",
+        "binary_sha256": "864e1fdb7602582bb5c76d6da8429199cd35fa1a8412ba5509a94ba3055d941a",
+        "lock_sha256": "00967e96595c1a68bf7c0a9b30edc1bcd4f7a08220f67a4ed5d0ded1cec8d3d5",
+        "journal_sha256": "7eb0d91a6f678458205f9041886c33024575cc3cc0cc4beef26d54981c488b57"
+      },
+      "commands": [
+        {
+          "name": "toolchain",
+          "exit_code": 0
+        },
+        {
+          "name": "format",
+          "exit_code": 0
+        },
+        {
+          "name": "test-debug",
+          "exit_code": 0
+        },
+        {
+          "name": "test-release",
+          "exit_code": 0
+        },
+        {
+          "name": "build-release",
+          "exit_code": 0
+        },
+        {
+          "name": "five-cycles",
+          "exit_code": 0
+        },
+        {
+          "name": "inspect",
+          "exit_code": 0
+        },
+        {
+          "name": "independent-verifier",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "rust": "1.99.1",
+      "os": "Windows-10-10.0.19045-SP0",
+      "cargo": "cargo 1.99.1 (5f94df478 2026-08-27)",
+      "tests": {
+        "debug": 48,
+        "release": 48
+      },
+      "cycle_bits": [
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "result": {
+        "status": "passed",
+        "binary_sha256": "3b98c9356999b098a2e3db480860a85ff91c6a826cdf88e78deb52bce1be3bf1",
+        "lock_sha256": "00967e96595c1a68bf7c0a9b30edc1bcd4f7a08220f67a4ed5d0ded1cec8d3d5",
+        "journal_sha256": "e7078f5cb9649dc52e60bcef83ff27a580be2be5b0fffc31f2723841f3f05eea"
+      },
+      "commands": [
+        {
+          "name": "toolchain",
+          "exit_code": 0
+        },
+        {
+          "name": "format",
+          "exit_code": 0
+        },
+        {
+          "name": "test-debug",
+          "exit_code": 0
+        },
+        {
+          "name": "test-release",
+          "exit_code": 0
+        },
+        {
+          "name": "build-release",
+          "exit_code": 0
+        },
+        {
+          "name": "five-cycles",
+          "exit_code": 0
+        },
+        {
+          "name": "inspect",
+          "exit_code": 0
+        },
+        {
+          "name": "independent-verifier",
+          "exit_code": 0
+        }
+      ]
+    }
+  ],
+  "source_hashes": {
+    "src/ffi.rs": "d409faa3767c14d1c7a42e1ef722d3906ee6f68ac3690d2015e22cf66bce915d",
+    "src/source_ffi.rs": "91396d6e1c92ad43d0224e3605ba0e28175c048d0b9a5701bb0a7d4878ffd4bd",
+    "src/zero_noi.rs": "db6ba97d1c8c95d642f261a423336c4510212abe2f162ce1fe4db5f471619cd9",
+    "Cargo.toml": "e7d7207634280b551520b966582fcd43f7d15d6020209caa2401ad2d8a622b59",
+    "Cargo.lock": "00967e96595c1a68bf7c0a9b30edc1bcd4f7a08220f67a4ed5d0ded1cec8d3d5",
+    ".github/workflows/reproduce.yml": "b94883cf7591430c32890d15c03f660ddf94a5c809efabe18f2fa419970b2b5c"
+  },
+  "log_hashes": {
+    "1.98.0-test-debug.stdout.log": "baa49459864e22fd372eca91cd93401f584e155d454436c0efc1385c0baf0a39",
+    "1.98.0-test-release.stdout.log": "efb53faf7bb36cfc1af3bf32b5fdd81648495092d344ac52456afa5abb09b358",
+    "1.98.0-verifier.json": "08a4ad9de377f51cf09308e8703e7942d12b59d1d33a187a7fe20423eea341c2",
+    "1.99.1-test-debug.stdout.log": "52a5406a93d623499acf54249a37832d1326bb2d3d4e3e2d3e38d99d8c32889b",
+    "1.99.1-test-release.stdout.log": "b984f5c1fcdb8700977937501ea0baf9ab8d715aa2ba52db6cad0ee0bddeda7a",
+    "1.99.1-verifier.json": "02d2e21b0fff7ab39c85821cee28206d63649c252030707e648e768195df3d6f",
+    "unchanged-1991-compile.stderr.log": "b87e9d536a3e44cbeb2c5db6aef7ebe9127c0651199f4edf04236e42d37df259"
+  },
+  "hosted_ci": "See the matching commit checks: Rust 1.98.0, 1.99.1 and stable on Ubuntu and Windows.",
+  "limits": [
+    "48 tests are run in two profiles; this is not 96 distinct properties.",
+    "No independent peer review or full native architecture certification is claimed.",
+    "The extracted authority token boundary, 0-NOI, thresholds, dependency lock and historical v0.1.0 evidence are unchanged."
+  ]
+}

@@ -21,10 +21,14 @@ pub(crate) struct ActionGate {
 }
 
 fn allocate_gate(sequence: &AtomicU64) -> Option<u64> {
-    sequence
-        .fetch_update(Ordering::Relaxed, Ordering::Relaxed, |n| n.checked_add(1))
-        .ok()
-        .map(|n| n + 1)
+    let mut current = sequence.load(Ordering::Relaxed);
+    loop {
+        let next = current.checked_add(1)?;
+        match sequence.compare_exchange_weak(current, next, Ordering::Relaxed, Ordering::Relaxed) {
+            Ok(_) => return Some(next),
+            Err(actual) => current = actual,
+        }
+    }
 }
 
 impl ActionGate {
@@ -68,6 +72,55 @@ impl ActionGate {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn concurrent_gate_allocations_are_unique_and_contiguous() {
+        let sequence = AtomicU64::new(0);
+        let barrier = std::sync::Barrier::new(32);
+        let mut allocated = std::thread::scope(|scope| {
+            let workers: Vec<_> = (0..32)
+                .map(|_| {
+                    scope.spawn(|| {
+                        barrier.wait();
+                        (0..64)
+                            .map(|_| allocate_gate(&sequence).unwrap())
+                            .collect::<Vec<_>>()
+                    })
+                })
+                .collect();
+            workers
+                .into_iter()
+                .flat_map(|worker| worker.join().unwrap())
+                .collect::<Vec<_>>()
+        });
+        allocated.sort_unstable();
+        assert_eq!(allocated, (1..=2048).collect::<Vec<u64>>());
+        assert_eq!(sequence.load(Ordering::Relaxed), 2048);
+    }
+
+    #[test]
+    fn concurrent_gate_exhaustion_has_one_final_allocation_and_never_wraps() {
+        let sequence = AtomicU64::new(u64::MAX - 1);
+        let barrier = std::sync::Barrier::new(32);
+        let outcomes = std::thread::scope(|scope| {
+            let workers: Vec<_> = (0..32)
+                .map(|_| {
+                    scope.spawn(|| {
+                        barrier.wait();
+                        allocate_gate(&sequence)
+                    })
+                })
+                .collect();
+            workers
+                .into_iter()
+                .map(|worker| worker.join().unwrap())
+                .collect::<Vec<_>>()
+        });
+        assert_eq!(outcomes.iter().filter(|v| **v == Some(u64::MAX)).count(), 1);
+        assert_eq!(outcomes.iter().filter(|v| v.is_none()).count(), 31);
+        assert_eq!(sequence.load(Ordering::Relaxed), u64::MAX);
+        assert_eq!(allocate_gate(&sequence), None);
+    }
 
     #[test]
     fn wrong_nonce_does_not_burn_legitimate_handle() {

@@ -35,4 +35,4 @@ The reproduction command creates a new evidence directory and build artifacts; i
 
 This correction applies to the maintained branch. The original `v0.1.0` tag, ZIP, DOI archives and recorded results are preserved; they are not retroactively described as corrected. The maintained source has its own updated `SHA256SUMS`.
 
-Rehashed contradictions with records already present are now rejected. SHA-256 still does not authenticate the history's author. Whole-history substitution or rollback to a complete older valid prefix remains outside the guarantee without a trusted external anchor. Rust 1.99.1 compatibility remains a separate open issue; the declared toolchain stays Rust 1.98.0.
+Rehashed contradictions with records already present are now rejected. SHA-256 still does not authenticate the history's author. Whole-history substitution or rollback to a complete older valid prefix remains outside the guarantee without a trusted external anchor. The separate Rust 1.99.1 compatibility issue is addressed by the subsequent [allocator correction](CI_STATUS.md). The 46-test result above remains the historical validation of this memory correction.

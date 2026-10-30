@@ -1,0 +1,68 @@
+
+running 43 tests
+test authority::tests::deterministic_collapse_ignores_candidate_enumeration_order ... ok
+test ffi::tests::c_abi_copied_handle_probe_accepts_one_of_eight ... ok
+test ffi::tests::changed_binding_does_not_burn_legitimate_handle ... ok
+test ffi::tests::another_session_gate_cannot_consume_copied_handle ... ok
+test authority::tests::exact_counterexample_not_average_blocks_candidate ... ok
+test ffi::tests::copied_handles_consume_exactly_once ... ok
+test ffi::tests::consumed_token_does_not_cross_wrapper_interface ... ok
+test authority::tests::missing_candidate_does_not_veto_another_fully_evidenced_candidate ... ok
+test authority::tests::fabricated_quantum_gain_fails_even_with_rehashed_trace ... ok
+test ffi::tests::issuance_is_bounded_and_exhaustion_does_not_wrap ... ok
+test authority::tests::zero_physical_budget_cannot_be_replaced_by_positive_model ... ok
+test ffi::tests::concurrent_32_copies_have_one_winner ... ok
+test ffi::tests::wrong_nonce_does_not_burn_legitimate_handle ... ok
+test hardware::tests::deadline_boundaries_are_exact_and_invalid_deadlines_fail ... ok
+test hardware::tests::payload_limit_and_overflow_fail_before_allocation ... ok
+test authority::tests::corrupt_hardware_receipt_loses_seal_and_produces_question ... ok
+test hardware::tests::every_value_is_written_and_read_in_little_endian_order ... ok
+test hardware::tests::slots_preserve_the_source_budget_law_without_unfunded_minimum ... ok
+test ffi::tests::concurrent_gate_exhaustion_has_one_final_allocation_and_never_wraps ... ok
+test hardware::tests::zero_budget_or_unfunded_payload_cannot_execute ... ok
+test ffi::tests::concurrent_gate_allocations_are_unique_and_contiguous ... ok
+test authority::tests::prior_success_does_not_authorize_current_missing_evidence ... ok
+test authority::tests::trace_byte_or_order_corruption_never_keeps_seal ... ok
+test storage::tests::trailing_and_truncated_bytes_are_rejected ... ok
+test storage::tests::rehashed_refusal_with_broken_lgc_is_rejected ... ok
+test storage::memory_reference_tests::genuine_integrity_incident_without_coordination_can_commit_and_reopen ... ok
+test storage::memory_reference_tests::commit_rejects_false_history_before_any_write_or_state_change ... ok
+test tests::exclusive_store_lock_refuses_second_writer ... ok
+test tests::altered_or_truncated_memory_fails_closed_on_reopen ... ok
+test tests::unknown_json_fields_and_duplicate_candidates_are_not_silent ... ok
+test storage::tests::rehashed_positive_with_changed_assessment_is_rejected ... ok
+test zero_noi::tests::no_mutation_no_authority ... ok
+test zero_noi::tests::no_payload_interpretation ... ok
+test tests::conflicting_effect_never_resets_or_overwrites ... ok
+test storage::tests::rebuilt_hash_chain_cannot_transfer_a_witness_role ... ok
+test tests::same_action_same_values_has_one_effect_across_process_reopen ... ok
+test tests::five_cycles_current_proof_and_durable_restart ... ok
+test storage::memory_reference_tests::rehashed_changed_positive_reference_refuses_reopen ... ok
+test storage::memory_reference_tests::rehashed_invented_negative_reference_refuses_reopen ... ok
+test storage::memory_reference_tests::rehashed_wrong_prior_receipt_refuses_reopen ... ok
+test storage::memory_reference_tests::rehashed_dropped_history_references_refuse_reopen ... ok
+test storage::memory_reference_tests::rehashed_wrong_question_count_refuses_reopen ... ok
+test storage::memory_reference_tests::interleaved_contexts_reopen_with_exact_last_eight_references ... ok
+
+test result: ok. 43 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.78s
+
+
+running 3 tests
+test tests::processing_failure_does_not_invent_rollback ... ok
+test tests::broken_output_keeps_known_commit_and_does_not_claim_refusal ... ok
+test tests::oversized_input_is_read_only_through_limit_plus_one ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 2 tests
+test oversized_or_duplicate_field_inputs_do_not_touch_memory ... ok
+test five_independent_processes_share_context_without_inheriting_verdicts ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.38s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

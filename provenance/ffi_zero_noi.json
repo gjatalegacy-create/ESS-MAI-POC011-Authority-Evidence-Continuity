@@ -42,7 +42,8 @@
       "1024 lifetime action cap, 4096 byte nonempty binding cap",
       "exact binding byte equality checked before native CAS consumption",
       "unique checked process-local gate nonce preventing cross-gate replay",
-      "internal test-only C ABI adapter; no exported authority issuer"
+      "internal test-only C ABI adapter; no exported authority issuer",
+      "checked compare-exchange loop for gate nonce allocation; preserves uniqueness and exhaustion without deprecated fetch_update"
     ],
     "limits": [
       "The original native generation counter is protected by the wrapper capacity bound.",
@@ -51,7 +52,7 @@
       "The Rust ownership/token boundary does not protect a process with arbitrary unsafe memory corruption.",
       "The internal C ABI test is not a separately compiled C translation unit."
     ],
-    "wrapper_sha256": "a40bbbabe48057accaf7a872b13680e96846c1b9df63b53d90593cb87bb76a1e"
+    "wrapper_sha256": "d409faa3767c14d1c7a42e1ef722d3906ee6f68ac3690d2015e22cf66bce915d"
   },
   "zero_noi": {
     "source": "C:\\Users\\AG\\Desktop\\aig-c\\codex_zvn\\runtime\\zero-noi\\src\\lib.rs",

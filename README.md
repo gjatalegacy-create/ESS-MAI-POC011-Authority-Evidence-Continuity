@@ -14,6 +14,8 @@ pretty_name: "ESS-MAI POC011: Authority, Evidence and Durable Continuity"
 
 # POC011 — Authority, Evidence and Durable Continuity
 
+[![Reproduce bounded POC011](https://github.com/gjatalegacy-create/ESS-MAI-POC011-Authority-Evidence-Continuity/actions/workflows/reproduce.yml/badge.svg?branch=main)](https://github.com/gjatalegacy-create/ESS-MAI-POC011-Authority-Evidence-Continuity/actions/workflows/reproduce.yml)
+
 [Software DOI](https://doi.org/10.5281/zenodo.23809527) · [Companion preprint](https://doi.org/10.5281/zenodo.23809644) · [GitHub](https://github.com/gjatalegacy-create/ESS-MAI-POC011-Authority-Evidence-Continuity) · [Hugging Face](https://huggingface.co/datasets/gjata-legacy/ess-mai-poc-011-authority-evidence-continuity) · [All public links and indexing limits](PUBLIC_LINKS.md)
 
 Start with [the precise explanation of the paradigm and this experiment](EXPLAINED.md), then [the reproduction and critique protocol](REVIEW_PROTOCOL.md). Several calls may perform different competences; they must not be counted as repeated authority solely because the same role appears again.
@@ -65,11 +67,13 @@ The examples are deterministic mathematical fixtures. Their samples are supplied
 
 ## Reproduce locally
 
-Use **Rust 1.98.0**, the exact toolchain of the recorded validation and the pinned hosted reproduction workflow. Rust 1.99.1 makes the existing `fetch_update` call a deprecation error under this package's unchanged `warnings = "deny"` policy; newer-toolchain compatibility is not claimed. See [the CI compatibility erratum](CI_STATUS.md). `Cargo.lock` pins the dependencies. Offline commands require those pinned crates to exist in the local Cargo cache; they do not silently fetch dependencies.
+The maintained branch fixes the Rust 1.99.1 compiler error in the gate allocator itself, using a checked atomic compare-exchange loop. CI tests **Rust 1.98.0, Rust 1.99.1 and current stable on Ubuntu and Windows**; use 1.99.1 for a pinned current reproduction. The package keeps `warnings = "deny"`. See [the compatibility correction and validation record](CI_STATUS.md). The immutable `v0.1.0` archive still requires its recorded Rust 1.98.0 environment. `Cargo.lock` pins the dependencies. Offline commands require those pinned crates to exist in the local Cargo cache; they do not silently fetch dependencies.
 
-Run from this directory:
+Run from this directory (first cache dependencies with `cargo fetch --locked` if needed):
 
 ```text
+rustup toolchain install 1.99.1 --profile minimal --component rustfmt
+rustup override set 1.99.1
 cargo test --locked --offline
 cargo test --locked --offline --release
 cargo run --locked --offline --release -- demo demo-run
@@ -80,7 +84,7 @@ cargo run --locked --offline --release -- inspect demo-run/memory.wal
 
 The CLI also accepts `init WAL` and `cycle WAL INPUT.json`. The latter opens an existing journal and requires the exact next durable cycle number. Invalid input or an unresolved execution/storage failure exits nonzero. Diagnostics distinguish command failure, processing failure with uncertain commit status, and delivery failure after a known durable commit. They do not invent rollback or authorize an automatic retry.
 
-[RESULTS.md](RESULTS.md) records 38 passing Rust tests in both debug and release, the actual five cycles, and the independent Python verification with 17 self-tests. It also contains exact reproduction commands and known limits.
+The original [RESULTS.md](RESULTS.md) records 38 passing Rust tests in both debug and release, the actual five cycles, and the independent Python verification with 17 self-tests. It also contains exact reproduction commands and known limits. Current maintenance validation is recorded separately in [CI_STATUS.md](CI_STATUS.md); it does not rewrite the original release results.
 
 ## Continuity and memory
 

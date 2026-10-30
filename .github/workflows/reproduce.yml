@@ -7,20 +7,26 @@ permissions:
   contents: read
 jobs:
   reproduce:
+    name: Rust ${{ matrix.rust }} / ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
+        rust: ["1.98.0", "1.99.1", stable]
     runs-on: ${{ matrix.os }}
+    env:
+      RUSTUP_TOOLCHAIN: ${{ matrix.rust }}
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           persist-credentials: false
       - name: Prepare official Rust toolchain
-        run: rustup toolchain install 1.98.0 --profile minimal --component rustfmt
-      - name: Select Rust toolchain
-        run: rustup default 1.98.0
+        run: rustup toolchain install ${{ matrix.rust }} --profile minimal --component rustfmt
+      - name: Record Rust toolchain
+        run: |
+          rustc -Vv
+          cargo -V
       - name: Fetch pinned dependencies
         run: cargo fetch --locked
       - name: Verify archived evidence and manifest

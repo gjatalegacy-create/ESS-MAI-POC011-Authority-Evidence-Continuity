@@ -112,7 +112,7 @@ order eligible candidates by gain descending, risk ascending, SHA-256 ascending<
 
     <section id="reproduce" aria-labelledby="reproduce-title">
       <h2 id="reproduce-title">Reproduce locally</h2>
-      <p>Clone the public capsule. Use Rust 1.89 or newer and Python 3 for the separate verifier. Offline execution requires the pinned Cargo dependencies in your local cache; on a clean machine, first run <code>cargo fetch --locked</code> with network access.</p>
+      <p>Clone the public capsule. Use Rust 1.99.1 and Python 3 for the separate verifier. The maintained branch also tests Rust 1.98.0 and current stable; see the <a href="https://github.com/gjatalegacy-create/ESS-MAI-POC011-Authority-Evidence-Continuity/blob/main/CI_STATUS.md">compiler compatibility correction and CI evidence</a>. The original v0.1.0 archive retains its Rust 1.98.0 requirement. Offline execution requires the pinned Cargo dependencies in your local cache; on a clean machine, first run <code>cargo fetch --locked</code> with network access.</p>
       <pre><code>git clone https://github.com/gjatalegacy-create/ESS-MAI-POC011-Authority-Evidence-Continuity.git
 cd ESS-MAI-POC011-Authority-Evidence-Continuity
 cargo test --locked --offline
@@ -126,7 +126,7 @@ python tools/verify.py demo-run --self-test</code></pre>
 
     <section id="evidence" aria-labelledby="evidence-title">
       <h2 id="evidence-title">What the evidence supports</h2>
-      <p>The recorded Windows 10 AMD64 run passed <strong>38 Rust tests in debug and again in release</strong>, the five-cycle fixture, and <strong>17 Python verifier self-tests</strong>. Two build configurations are not 76 distinct properties. These are reproducible local checks, not independent peer review.</p>
+      <p>The original v0.1.0 Windows 10 AMD64 run passed <strong>38 Rust tests in debug and again in release</strong>, the five-cycle fixture, and <strong>17 Python verifier self-tests</strong>. Two build configurations are not 76 distinct properties. These are reproducible local checks, not independent peer review.</p>
       <div class="columns">
         <div><h3>Review the artifacts</h3><ul>
           <li><a href="https://github.com/gjatalegacy-create/ESS-MAI-POC011-Authority-Evidence-Continuity/blob/main/RESULTS.md">Results, commands, failures and limits</a></li>
